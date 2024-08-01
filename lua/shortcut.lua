@@ -10,4 +10,14 @@ function M.openHelpRight()
   vim.cmd('filetype detect')
 end
 
+function M.openVerticalSplit()
+    vim.cmd('vsplit')
+    vim.cmd('NvimTreeToggle')
+end
+
+function M.openHorizontalSplit()
+    vim.cmd('split')
+    vim.cmd('NvimTreeToggle')
+end
+
 return M

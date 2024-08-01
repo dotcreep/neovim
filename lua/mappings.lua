@@ -1,5 +1,5 @@
-local help = require('shortcut')
-
+local short = require('shortcut')
+local lsp_install = require('lsp_installer')
 
 -- Use ':S1' for install plugin
 vim.api.nvim_create_user_command('S1', function()
@@ -8,12 +8,33 @@ end, {})
 
 -- Use
 vim.api.nvim_create_user_command('Helpbot', function()
-  help.openHelpBot()
+  short.openHelpBot()
 end, { desc = 'Open help.md in a vertical split'})
 
 -- Use
 vim.api.nvim_create_user_command('Helpright', function()
-  help.openHelpRight()
+  short.openHelpRight()
 end, { desc = 'Open help.md in a horizon split'})
 
+-- Use 
+vim.api.nvim_create_user_command('LSP', function()
+  local lang = opts.args
+  lsp_install.install_language_server(lang)
+end, {})
+
+---
+--- KeyMaps
+---
+-- Install Autocompletion
+vim.api.nvim_set_keymap('n', '<leader>lspts', ':LSP typescript<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lsppy', ':LSP python<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lsprs', ':LSP rust<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lspgo', ':LSP go<CR>', { noremap = true, silent = true })
+
+-- File Explorer
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+-- Open File in split
+vim.api.nvim_set_keymap('n', '<leader>sv', ':lua short.openVerticalSplit()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sh', ':lua short.openHorizontalSplit()<CR>', { noremap = true, silent = true })
 

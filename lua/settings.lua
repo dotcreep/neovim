@@ -1,3 +1,6 @@
+-- Set Leader Key
+vim.g.mapleader = " " -- Set Leader Key
+
 -- Number line
 vim.o.number = true             -- Show number line
 vim.o.relativenumber = true     -- Show relative number line
