@@ -1,5 +1,5 @@
-local short = require('shortcut')
-local lsp_install = require('lsp_installer')
+local short = require('dotcreep.shortcut')
+local lsp_install = require('dotcreep.lsp_installer')
 
 -- Use ':S1' for install plugin
 vim.api.nvim_create_user_command('S1', function()
@@ -38,3 +38,8 @@ vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = tru
 vim.api.nvim_set_keymap('n', '<leader>sv', ':lua short.openVerticalSplit()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sh', ':lua short.openHorizontalSplit()<CR>', { noremap = true, silent = true })
 
+-- Open Help Documents
+vim.api.nvim_set_keymap('n', '<leader>h', ':Helpright<CR>', { noremap = true, silent = true })
+
+-- Tab Navigation
+vim.api.nvim_set_keymap('n', '<leader>t', ':tabnew<CR>', { noremap = true, silent = true })
