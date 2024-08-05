@@ -25,8 +25,8 @@ require'nvim-tree'.setup {
   },
   -- Filter file yang tidak ingin ditampilkan
   filters = {
-    dotfiles = false,
-    custom = { '.git', 'node_modules', '.cache' },
+    dotfiles = true,
+    custom = {}, -- { '.git', 'node_modules', '.cache' },
     exclude = { '.gitignore' },
   },
   -- Konfigurasi renderer

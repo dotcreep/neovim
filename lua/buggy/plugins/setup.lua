@@ -8,8 +8,11 @@ M.setup = function(config)
   if config.filemanager then
     require(name .. '.plugins.filemanager')
   end
-  if config.autocompletion then
-    require(name .. '.plugins.autocompletion')
+  if config.lsp_autocompletion then
+    require(name .. '.plugins.lsp_autocompletion')
+  end
+  if config.indentblackline then
+    require(name .. '.plugins.indentblackline')
   end
 end
 
