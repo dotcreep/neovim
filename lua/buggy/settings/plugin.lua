@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  -- use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
+  use 'freddiehaddad/feline.nvim'
+  use "Hitesh-Aggarwal/feline_one_monokai.nvim"
   ------------------------------------------------------------------------
   --- Search and Find for file, text, etc
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.8',

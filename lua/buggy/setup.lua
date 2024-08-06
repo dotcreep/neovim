@@ -23,5 +23,6 @@ themes.setup({
 })
 
 status.setup({
+  -- 'lualine', 'feline'
   statusline = 'lualine',
 })
