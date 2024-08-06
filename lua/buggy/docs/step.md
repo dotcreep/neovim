@@ -40,3 +40,5 @@ nol hingga digunakan sebagai alternatif beberapa code editor seperti
 * Cara membuka folder konfigurasi bagaimana?
 - Metode ini dibuat dengan shortcut space-oc yang difungsikan sebagai pindah
   ke folder konfigurasi jika di inginkan merubah sesuatu secara cepat.
+
+

@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'           -- Support icon on manager
   use 'lukas-reineke/indent-blankline.nvim'   -- Indent blankline
   use 'tpope/vim-fugitive'                    -- Git Intergration
+  use 'Pocco81/auto-save.nvim'                -- Auto save
   ------------------------------------------------------------------------
   --- Highlighting Syntax
   --- need install 'node' and 'build-essential' atau 'gcc' atau 'base-devel'
