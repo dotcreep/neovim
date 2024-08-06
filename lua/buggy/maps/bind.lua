@@ -64,7 +64,7 @@ map('n', '<leader>stv', ':Vsetup<CR>', opts)
 map('n', '<leader>oc', ':OpenConfig<CR>', opts)
 
 -- Running program
-map('n', '<leader>rd', ':RundevCR<>', opts)
+map('n', '<leader>rd', ':Rundev<CR>', opts)
 
 --- Open file in split mode
 -- map('n', '<leader>sv', ':lua short.openVerticalSplit()<CR>', opts)
