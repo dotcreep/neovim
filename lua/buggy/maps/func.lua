@@ -56,4 +56,28 @@ end
 
 --- End open setup
 
+--- Running Program
+function M.Rundev(file)
+  local ext = file:match("^.+(%..+)$")
+
+  local cmd
+  if ext == '.go' then
+    cmd = 'go run ' .. file
+  elseif ext == '.py' then
+    cmd = 'python ' .. file
+  elseif ext == '.js' then
+    cmd = 'node ' .. file
+  elseif ext == '.java' then
+    cmd = 'java ' .. file
+  elseif ext == '.sh' then
+    cmd = 'bash ' .. file
+  else
+    print('Unsupported file type')
+    return
+  end
+
+  c("!cd %:p:h && " .. cmd)
+end
+--- End Running Program
+
 return M

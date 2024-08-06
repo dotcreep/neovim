@@ -1,6 +1,7 @@
 --------------------------------------------------------
 --- Variable
 local map = vim.api.nvim_set_keymap
+local expand = vim.fn.expand
 local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local api = vim.api.nvim_create_user_command
@@ -30,6 +31,10 @@ end, { desc = 'Open setup in horizontal' })
 api('Vsetup', function()
   fun.openvSetup()
 end, { desc = 'Open setup in vertical' })
+
+api('Rundev', function()
+  fun.Rundev(expand("%"))
+end, { desc = 'Run program' })
 --------------------------------------------------------
 --- KeyMaps
 --- Begin Git Area
@@ -50,6 +55,9 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 -- Open file setup
 map('n', '<leader>sth', ':Setup<CR>', opts)
 map('n', '<leader>stv', ':Vsetup<CR>', opts)
+
+-- Running program
+map('n', '<leader>rd', ':RundevCR<>', opts)
 
 --- Open file in split mode
 -- map('n', '<leader>sv', ':lua short.openVerticalSplit()<CR>', opts)
