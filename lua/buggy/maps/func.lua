@@ -13,9 +13,9 @@ end
 
 function M.gitCommitPush()
   local message = commit()
-  c('Gwrite')
-  c('Gcommit -m "' .. message .. '"')
-  c('Gpush')
+  c('Git add .')
+  c('Git commit -m "' .. message .. '"')
+  c('Git push')
 end
 
 function M.createBranch()
