@@ -1,15 +1,18 @@
-vim.api.nvim_create_user_command('S1', function()
+local cmdApi = vim.api.nvim_create_user_command
+
+
+cmdApi('S1', function()
   vim.cmd('PackerInstall')
-end, {})
+end, { desc = 'Install new package'})
 
-vim.api.nvim_create_user_command('S0', function()
+cmdApi('S0', function()
   vim.cmd('PackerSync')
-end, {})
+end, { desc = 'Sync plugins package' })
 
-vim.api.nvim_create_user_command('Helpbot', function()
+cmdApi('Helpbot', function()
   short.openHelpBot()
 end, { desc = 'Open help.md in a vertical split'})
 
-vim.api.nvim_create_user_command('Helpright', function()
+cmdApi('Helpright', function()
   short.openHelpRight()
 end, { desc = 'Open help.md in a horizon split'})
