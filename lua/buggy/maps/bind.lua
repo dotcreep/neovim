@@ -35,6 +35,10 @@ end, { desc = 'Open setup in vertical' })
 api('Rundev', function()
   fun.Rundev(expand("%"))
 end, { desc = 'Run program' })
+
+api('OpenConfig', function()
+  fun.openConfig()
+end, { desc = 'Open nvim config' })
 --------------------------------------------------------
 --- KeyMaps
 --- Begin Git Area
@@ -55,6 +59,9 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 -- Open file setup
 map('n', '<leader>sth', ':Setup<CR>', opts)
 map('n', '<leader>stv', ':Vsetup<CR>', opts)
+
+-- Open nvim config folder
+map('n', '<leader>oc', ':OpenConfig<CR>', opts)
 
 -- Running program
 map('n', '<leader>rd', ':RundevCR<>', opts)

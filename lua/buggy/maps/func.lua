@@ -80,4 +80,36 @@ function M.Rundev(file)
 end
 --- End Running Program
 
+--- Open configuration nvim
+local function findNVimConfig()
+  local loc = {
+    vim.fn.stdpath("config"),
+    "~/.config/nvim",
+    "~/.nvim",
+    "~/AppData/Local/nvim", -- For windows
+  }
+
+  for _, path in ipairs(loc) do
+    local exp_path = vim.fn.expand(path)
+    if vim.fn.isdirectory(exp_path) == 1 then
+      return exp_path
+    end
+  end
+  return nil
+end
+
+function M.openConfig()
+  local configPath = findNVimConfig()
+  if configPath then
+    local nvim_tree = require('nvim-tree.api')
+    pcall(nvim_tree.tree.close)
+    nvim_tree.tree.open(configPath)
+    c('wincmd p')
+  else
+    print('Cannot find config folder')
+  end
+end
+--- End open configuration nvi:w
+
+
 return M

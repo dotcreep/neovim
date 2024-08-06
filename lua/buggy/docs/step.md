@@ -36,3 +36,7 @@ nol hingga digunakan sebagai alternatif beberapa code editor seperti
 * Perlu tema tetapi bisa di switcher
 - Tema yang dipasang oleh plugin dapat dipilah berdasarkan switcher di file
   parent setup.lua
+
+* Cara membuka folder konfigurasi bagaimana?
+- Metode ini dibuat dengan shortcut space-oc yang difungsikan sebagai pindah
+  ke folder konfigurasi jika di inginkan merubah sesuatu secara cepat.
