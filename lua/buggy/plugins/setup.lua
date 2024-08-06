@@ -17,6 +17,9 @@ M.setup = function(config)
   if config.autosave then
     require(name .. '.plugins.autosave')
   end
+  if config.golang then
+    require(name .. '.plugins.golang')
+  end
 end
 
 return M

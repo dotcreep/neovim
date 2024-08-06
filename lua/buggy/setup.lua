@@ -14,6 +14,7 @@ plugin.setup({
   lsp_autocompletion = true,
   indentblackline = true,
   autosave = true,
+  golang = true,
 })
 
 themes.setup({

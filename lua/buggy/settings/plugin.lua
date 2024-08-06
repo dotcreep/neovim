@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'   -- Indent blankline
   use 'tpope/vim-fugitive'                    -- Git Intergration
   use 'Pocco81/auto-save.nvim'                -- Auto save
+  use 'ray-x/go.nvim'                         -- Golang Development
+  use 'ray-x/guihua.lua'                      -- Floating UI
   ------------------------------------------------------------------------
   --- Highlighting Syntax
   --- need install 'node' and 'build-essential' atau 'gcc' atau 'base-devel'
