@@ -14,6 +14,9 @@ M.setup = function(config)
   if config.indentblackline then
     require(name .. '.plugins.indentblackline')
   end
+  if config.autosave then
+    require(name .. '.plugins.autosave')
+  end
 end
 
 return M

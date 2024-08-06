@@ -13,6 +13,7 @@ plugin.setup({
   filemanager = true,
   lsp_autocompletion = true,
   indentblackline = true,
+  autosave = true,
 })
 
 themes.setup({
