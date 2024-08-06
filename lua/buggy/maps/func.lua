@@ -37,12 +37,23 @@ end
 
 --- Begin Help Menu
 function M.openHelpHorizontal()
-  c('split lua/' .. namespace .. '/tutorial/help.md')
+  c('split lua/' .. namespace .. '/docs/help.md')
 end
 
 function M.openHelpVertical()
-  c('vsplit lua/' .. namespace .. '/tutorial/help.md')
+  c('vsplit lua/' .. namespace .. '/docs/help.md')
 end
 --- End Help Menu
+
+--- Open setup
+function M.openSetup()
+  c('split lua/' .. namespace .. '/setup.lua')
+end
+
+function M.openvSetup()
+  c('vsplit lua/' .. namespace .. '/setup.lua')
+end
+
+--- End open setup
 
 return M

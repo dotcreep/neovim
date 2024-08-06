@@ -22,6 +22,14 @@ end, { desc = 'Delete branch' })
 api('Sbranch', function()
   fun.switchBranch()
 end, { desc = 'Switch branch' })
+
+api('Setup', function()
+  fun.openSetup()
+end, { desc = 'Open setup in horizontal' })
+
+api('Vsetup', function()
+  fun.openvSetup()
+end, { desc = 'Open setup in vertical' })
 --------------------------------------------------------
 --- KeyMaps
 --- Begin Git Area
@@ -38,6 +46,10 @@ map('n', '<leader>gl', ':Gpull<CR>', opts)
 
 --- File Explorer
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+
+-- Open file setup
+map('n', '<leader>sth', ':Setup<CR>', opts)
+map('n', '<leader>stv', ':Vsetup<CR>', opts)
 
 --- Open file in split mode
 -- map('n', '<leader>sv', ':lua short.openVerticalSplit()<CR>', opts)

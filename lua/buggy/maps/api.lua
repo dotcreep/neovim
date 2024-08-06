@@ -9,10 +9,10 @@ cmdApi('S0', function()
   vim.cmd('PackerSync')
 end, { desc = 'Sync plugins package' })
 
-cmdApi('Helpbot', function()
-  short.openHelpBot()
-end, { desc = 'Open help.md in a vertical split'})
-
-cmdApi('Helpright', function()
-  short.openHelpRight()
-end, { desc = 'Open help.md in a horizon split'})
+-- cmdApi('Helpbot', function()
+--   short.openHelpBot()
+-- end, { desc = 'Open help.md in a vertical split'})
+-- 
+-- cmdApi('Helpright', function()
+--   short.openHelpRight()
+-- end, { desc = 'Open help.md in a horizon split'})
