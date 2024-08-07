@@ -39,6 +39,10 @@ end, { desc = 'Run program' })
 api('OpenConfig', function()
   fun.openConfig()
 end, { desc = 'Open nvim config' })
+
+api('Pip', function(opts)
+  fun.pythonPip(opts.args)
+end, { nargs = '+' , desc = 'Python pip'})
 --------------------------------------------------------
 --- KeyMaps
 --- Begin Git Area

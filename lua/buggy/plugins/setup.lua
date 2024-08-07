@@ -20,6 +20,12 @@ M.setup = function(config)
   if config.golang then
     require(name .. '.plugins.golang')
   end
+  if config.treesitter then
+    require(name .. '.plugins.treesitter')
+  end
+  if config.linting then
+    require(name .. '.plugins.linting')
+  end
 end
 
 return M

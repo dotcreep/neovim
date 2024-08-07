@@ -111,5 +111,10 @@ function M.openConfig()
 end
 --- End open configuration nvi:w
 
+function M.pythonPip(command)
+  local cmd = string.format('!pip %s', command)
+  c(cmd)
+end
+
 
 return M

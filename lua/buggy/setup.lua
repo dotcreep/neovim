@@ -15,6 +15,7 @@ plugin.setup({
   indentblackline = true,
   autosave = true,
   golang = true,
+  treesitter = true,
 })
 
 themes.setup({

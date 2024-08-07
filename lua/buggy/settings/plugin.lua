@@ -13,8 +13,46 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'   -- Indent blankline
   use 'tpope/vim-fugitive'                    -- Git Intergration
   use 'Pocco81/auto-save.nvim'                -- Auto save
-  use 'ray-x/go.nvim'                         -- Golang Development
   use 'ray-x/guihua.lua'                      -- Floating UI
+  use 'mfussenegger/nvim-lint'                -- Linting
+  use 'tpope/vim-surround'                    -- Parentheses, brackets,
+                                              -- quotes, XML tags, 
+                                              -- and more
+  use 'tpope/vim-commentary'                  -- Commentary tools
+  ------------------------------------------------------------------------
+  --- Development Area
+  use 'ray-x/go.nvim'                         -- Golang Development
+  use 'folke/lua-dev.nvim'                    -- Lua Development
+  use 'mfussenegger/nvim-jdtls'               -- Java Development
+  use 'bash-lsp/bash-language-server'         -- Bash Development
+
+  --- HTML and CSS
+  use 'mattn/emmet-vim'
+  use 'othree/html5.vim'
+  use 'hail2u/vim-css3-syntax'
+
+  -- JavaScript/TypeScript
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use 'maxmellon/vim-jsx-pretty'
+  use 'HerringtonDarkholme/yats.vim'
+
+  -- C/C++
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'jackguo380/vim-lsp-cxx-highlight'
+
+  -- Python
+  use 'Vimjas/vim-python-pep8-indent'
+  use 'mfussenegger/nvim-dap-python'
+
+  -- Rust
+  use 'rust-lang/rust.vim'
+  use 'simrat39/rust-tools.nvim'
+
+  -- React/Vue/Angular
+  use 'pangloss/vim-javascript'
+  use 'MaxMEllon/vim-jsx-pretty'
+  use 'leafOfTree/vim-vue-plugin'
+  use 'jparise/vim-graphql'
   ------------------------------------------------------------------------
   --- Highlighting Syntax
   --- need install 'node' and 'build-essential' atau 'gcc' atau 'base-devel'
