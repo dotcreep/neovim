@@ -1,5 +1,5 @@
-local short = require('dotcreep.shortcut')
-local lsp_install = require('dotcreep.lsp_installer')
+local short = require('alpha.shortcut')
+local lsp_install = require('alpha.lsp_installer')
 
 -- Use ':S1' for install plugin
 vim.api.nvim_create_user_command('S1', function()

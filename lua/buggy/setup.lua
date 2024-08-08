@@ -1,6 +1,6 @@
 local name = require("buggy.settings.namespace").namespace
 
-require(name .. '.settings.plugin')
+require(name .. '.settings.plugins')
 require(name .. '.settings.basic')
 require(name .. '.maps.setup')
 

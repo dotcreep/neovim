@@ -1,10 +1,29 @@
--- local fn = vim.fn
--- local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
--- if fn.empty(fn.glob(install_path)) > 0 then
--- 	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
--- end
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
 
-return require('packer').startup(function(use)
+local packer_bootstrap = ensure_packer()
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua PackerSync
+  augroup end
+]])
+
+local status, packer = pcall(require, "packer")
+if not status then
+  return
+end
+
+return packer.startup(function(use)
   use 'wbthomason/packer.nvim'                -- Plugin Manager
   ------------------------------------------------------------------------
   use 'windwp/nvim-autopairs'                 -- Auto pair symbols
@@ -109,5 +128,10 @@ return require('packer').startup(function(use)
     },
     config = true
   }
-  -- if packer_bootstrap then require("packer").sync() end
+
+  if packer_bootstrap then
+    require('packer').sync()
+    vim.cmd('source '..vim.fn.stdpath('config')..'/init.lua')
+  end
 end)
+
