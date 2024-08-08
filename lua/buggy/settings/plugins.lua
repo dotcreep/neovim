@@ -38,6 +38,7 @@ return packer.startup(function(use)
                                               -- quotes, XML tags, 
                                               -- and more
   use 'tpope/vim-commentary'                  -- Commentary tools
+  use 'stevearc/dressing.nvim'                -- Dressing 
   ------------------------------------------------------------------------
   --- Development Area
   use 'ray-x/go.nvim'                         -- Golang Development
@@ -56,7 +57,6 @@ return packer.startup(function(use)
   use 'HerringtonDarkholme/yats.vim'
 
   -- C/C++
-  use 'nvim-treesitter/nvim-treesitter'
   use 'jackguo380/vim-lsp-cxx-highlight'
 
   -- Python
@@ -84,6 +84,7 @@ return packer.startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'ellisonleao/gruvbox.nvim'
   use 'Mofiqul/vscode.nvim'
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
   ------------------------------------------------------------------------
   --- Language Support
   use {
@@ -109,7 +110,8 @@ return packer.startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   -- use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
-  use 'freddiehaddad/feline.nvim'
+  -- use 'freddiehaddad/feline.nvim'
+  use 'famiu/feline.nvim'
   use "Hitesh-Aggarwal/feline_one_monokai.nvim"
   ------------------------------------------------------------------------
   --- Search and Find for file, text, etc

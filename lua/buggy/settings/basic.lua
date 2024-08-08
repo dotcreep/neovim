@@ -22,8 +22,9 @@ local options = {
   splitright = true,         -- Vertival split to the right of active window
   hidden = true,             -- Allow unsaved buffers to remain open
   showtabline = 2,           -- Always show bar tab
-  laststatus = 2,            -- Always show status bar
+  laststatus = 4,            -- Always show status bar
   cmdheight = 1,             -- Height line command
+  showmode = false,          -- Hide default statusline
   updatetime = 300,          -- Waiting update time in ms
   timeoutlen = 500,          -- Waiting time to wait for sequence mapping
   swapfile = false,          -- Does not using swap file
@@ -31,7 +32,7 @@ local options = {
   undofile = true,           -- Activated saving undo
   clipboard = 'unnamedplus', -- Use system clipboard
   mouse = 'a',               -- Activate mouse to using in all mode
-  background = 'dark'        -- Theme 'dark' or 'light'
+  background = 'dark',       -- Theme 'dark' or 'light'
   -- guifont = ''            -- Font for graphical neovim application
 }
 

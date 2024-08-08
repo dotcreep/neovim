@@ -2,6 +2,7 @@ local name = require("buggy.settings.namespace").namespace
 
 require(name .. '.settings.plugins')
 require(name .. '.settings.basic')
+require(name .. '.settings.customs')
 require(name .. '.maps.setup')
 
 local plugin = require(name .. '.plugins.setup')
@@ -16,6 +17,7 @@ plugin.setup({
   autosave = true,
   golang = true,
   treesitter = true,
+  bufferline = true,
 })
 
 themes.setup({
@@ -25,5 +27,5 @@ themes.setup({
 
 status.setup({
   -- 'lualine', 'feline'
-  statusline = 'lualine',
+  statusline = 'feline',
 })

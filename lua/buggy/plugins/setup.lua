@@ -26,6 +26,9 @@ M.setup = function(config)
   if config.linting then
     require(name .. '.plugins.linting')
   end
+  if config.bufferline then
+    require(name .. '.plugins.bufferline')
+  end
 end
 
 return M

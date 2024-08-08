@@ -76,6 +76,24 @@ map('n', '<leader>r', ':Rundev<CR>', opts)
 
 --- Tab navigation
 map('n', '<leader>t', ':tabnew<CR>', opts)
+map('n', '<C-Space>', ':tabnew<CR>', opts)
+
+--- Navigation
+map('n', '<C-A-Left>', '<C-w>h', opts)
+map('n', '<C-A-Right>', '<C-w>l', opts)
+map('n', '<C-A-Up>', '<C-w>k', opts)
+map('n', '<C-A-Down>', '<C-w>j', opts)
+
+map('n', '<C-A-h>', '<C-w>h', opts)
+map('n', '<C-A-l>', '<C-w>l', opts)
+map('n', '<C-A-k>', '<C-w>k', opts)
+map('n', '<C-A-j>', '<C-w>j', opts)
+
+--- Resize Split Tab
+map('n', '<C-h>', ':vertical resize +2<CR>', opts)
+map('n', '<C-l>', ':vertical resize -2<CR>', opts)
+map('n', '<C-k>', ':resize +2<CR>', opts)
+map('n', '<C-j>', ':resize -2<CR>', opts)
 
 --- Telescope
 local builtin = require('telescope.builtin')
