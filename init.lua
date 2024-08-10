@@ -1,7 +1,7 @@
 local profile = require('profile')
 
 profile.setup({
-  profile = 'buggy', -- 'buggy' and 'dotcreep'
+  profile = 'chimera', -- 'alpaca','buggy' and 'chimera'
 })
 
 -- require("dotcreep.settings") -- Settings

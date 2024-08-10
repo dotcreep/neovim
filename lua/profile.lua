@@ -5,6 +5,8 @@ M.setup = function(config)
     require("alpha.setup")
   elseif config.profile == 'buggy' then
     require("buggy.setup")
+  elseif config.profile == 'chimera' then
+    require("chimera")
   end
 end
 

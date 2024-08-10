@@ -30,7 +30,6 @@ return packer.startup(function(use)
   use 'nvim-tree/nvim-tree.lua'               -- File manager
   use 'nvim-tree/nvim-web-devicons'           -- Support icon on manager
   use 'lukas-reineke/indent-blankline.nvim'   -- Indent blankline
-  use 'tpope/vim-fugitive'                    -- Git Intergration
   use 'Pocco81/auto-save.nvim'                -- Auto save
   use 'ray-x/guihua.lua'                      -- Floating UI
   use 'mfussenegger/nvim-lint'                -- Linting
@@ -41,6 +40,7 @@ return packer.startup(function(use)
   use 'stevearc/dressing.nvim'                -- Dressing 
   ------------------------------------------------------------------------
   --- Development Area
+  use 'tpope/vim-fugitive'                    -- Git Intergration
   use 'ray-x/go.nvim'                         -- Golang Development
   use 'folke/lua-dev.nvim'                    -- Lua Development
   use 'mfussenegger/nvim-jdtls'               -- Java Development
