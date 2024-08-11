@@ -50,5 +50,7 @@ keymap.set("n", "<C-j>", ":resize -2<CR>", o)
 --- Open Terminal
 keymap.set("n", "<leader>tv", ":OpenTerminalVertical<CR>", o)
 keymap.set("n", "<leader>ts", ":OpenTerminal<CR>", o)
+keymap.set("n", "<leader>te", ":ToggleTerm<CR>", o)
+
 ------------------------------------------------------------------------
 --- Third Party
