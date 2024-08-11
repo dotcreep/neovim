@@ -44,6 +44,11 @@ end, { nargs = "+", desc = "Python pip" })
 api("OpenTerminal", function()
 	fun.OpenTerminal()
 end, { desc = "Open Terminal" })
+
+api("OpenTerminalVertical", function()
+	fun.OpenTerminalVertical()
+end, { desc = "Open Terminal" })
+
 --------------------------------------------------------
 --- Begin Git Area
 map("n", "<leader>gcp", ":GitPush<CR>", o)

@@ -47,5 +47,8 @@ keymap.set("n", "<C-l>", ":vertical resize -2<CR>", o)
 keymap.set("n", "<C-k>", ":resize +2<CR>", o)
 keymap.set("n", "<C-j>", ":resize -2<CR>", o)
 
+--- Open Terminal
+keymap.set("n", "<leader>tv", ":OpenTerminalVertical<CR>", o)
+keymap.set("n", "<leader>ts", ":OpenTerminal<CR>", o)
 ------------------------------------------------------------------------
 --- Third Party
