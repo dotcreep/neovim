@@ -1,7 +1,9 @@
 local M = {}
 M.theme = {
-	colorscheme = "gruvbox", -- gruvbox, catppuccin
-	statusline = "lualine", -- lualine, feline
+	-- gruvbox, catppuccin, vscode, cyberdream, onedark
+	colorscheme = "gruvbox",
+	-- lualine, feline
+	statusline = "lualine",
 }
 
 return M
