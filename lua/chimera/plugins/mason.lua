@@ -29,13 +29,22 @@ return {
 			"ruby_lsp",
 			"vhdl_ls",
 			"lemminx",
+      "rust_analyzer",
 		}
 		local function add(t, package_name, lsp, linter, dap, formatter)
-			if package(package_name) and (not is_arm64() or not vim.tbl_contains(not_support_arm64, package_name)) then
-				table.insert(t.lsp, lsp)
-				table.insert(t.linter, linter)
-				table.insert(t.dap, dap)
-				table.insert(t.formatter, formatter)
+			if package(package_name) then
+        if not vim.tbl_contains(not_support_arm64, lsp) then
+				  table.insert(t.lsp, lsp)
+        end
+        if not vim.tbl_contains(not_support_arm64, linter) then
+				  table.insert(t.linter, linter)
+        end
+        if not vim.tbl_contains(not_support_arm64, dap) then
+				  table.insert(t.dap, dap)
+        end
+        if not vim.tbl_contains(not_support_arm64, formatter) then
+				  table.insert(t.formatter, formatter)
+        end
 			end
 		end
 
