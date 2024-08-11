@@ -11,7 +11,7 @@ return {
 		"williamboman/mason-lspconfig.nvim", -- LSP Mason
 		"WhoIsSethDaniel/mason-tool-installer.nvim", -- Mason Installer Tools
 		"neovim/nvim-lspconfig", -- LSP Config
-		"onsails/lspkind-nvim", -- LSP Kind
+		-- "onsails/lspkind-nvim", -- LSP Kind
 	},
 	config = function()
 		local mason_tool_installer = require("mason-tool-installer")
@@ -58,27 +58,88 @@ return {
 			},
 		})
 		local lsp_servers = {
-			"html",
-			"cssls",
-			"tsserver",
-			"eslint",
-			"gopls",
-			--"lua_ls",
-			"bashls",
-			"pyright",
-			--"textlsp",
-			"vuels",
-			"yamlls",
-			"jsonls",
-			"gradle_ls",
-			"dockerls",
-			--'jinja_lsp',
-			--'ast_grep',
-			--"clangd", -- require unzip
-			--"arduino_language_server", -- require unzip
-			"ansiblels",
+			---- https://github.com/williamboman/mason-lspconfig.nvim
 			"angularls",
-			--"markdown_oxide",
+			"ansiblels",
+			"arduino_language_server",
+			"bashls",
+			"pkgbuild_language_server",
+			"csharp_ls",
+			-- "ast_grep",
+			"clangd",
+			"harper_ls",
+			"cmake",
+			"cssls",
+			"tailwindcss",
+			"jinja_lsp",
+			"docker_compose_language_service",
+			"dockerls",
+			"elixirls",
+			"erlangls",
+			"flux_lsp",
+			"gopls",
+			"golangci_lint_ls",
+			"gradle_ls",
+			"graphql",
+			"groovyls",
+			"glint",
+			"hls",
+			"haxe_language_server",
+			"helm_ls",
+			"html",
+			"htmx",
+			"twiggy_language_server",
+			"hyprls",
+			"java_language_server",
+			"jdtls",
+			"eslint",
+			"tsserver",
+			"vtsls",
+			"jsonls",
+			"kotlin_language_server",
+			"ltex",
+			"texlab",
+			"cssls",
+			-- "shopify_theme_ls",
+			"harper_ls",
+			"lua_ls",
+			"luau_lsp",
+			"grammarly",
+			"marksman",
+			"vale_ls",
+			"nginx_language_server",
+			"nickel_ls",
+			"nim_langserver",
+			"ols",
+			"bsl_ls",
+			"opencl_ls",
+			"textlsp",
+			"perlnavigator",
+			"pest_ls",
+			--"intelephense",
+			"phpactor",
+			"psalm",
+			"stimulus_ls",
+			"powershell_es",
+			"puppet",
+			"purescriptls",
+			"pylsp",
+			"pyright",
+			--"r_language_server",
+			"ruby_lsp",
+			--"sqlls",
+			"sqls",
+			"terraformls",
+			"tflint",
+			"taplo",
+			"glint",
+			"vhdl_ls",
+			"vimls",
+			"volar",
+			"vuels",
+			"lemminx",
+			"yamlls",
+			-- "vls",
 		}
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -98,7 +159,7 @@ return {
 		-- 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 		-- 	return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 		-- end
-		local lspkind = require("lspkind")
+		--  local lspkind = require("lspkind")
 		local cmp = require("cmp")
 		cmp.setup({
 			window = {
@@ -154,7 +215,6 @@ return {
 				{ name = "luasnip" }, -- Source snippet
 				{ name = "buffer" }, -- Source buffer
 				{ name = "path" }, -- Source path
-				{ name = "copilot" },
 			}, {
 				{ name = "buffer" },
 			}),
