@@ -52,13 +52,13 @@ return {
 			-- Node.js / Javascript
 			add(tools, "node", "tsserver", "eslint", "node-debug2-adapter", "prettier")
 			-- Golang
-			add(tools, "go", "gopls", "golangci-lint", "delve", "gofmt")
+			add(tools, "go", "gopls", "golangci_lint_ls", "delve", "gofmt")
 			-- Lua
 			add(tools, "luac", "lua_ls", "luacheck", "nlua", "stylua")
 			-- C
-			add(tools, "gcc", "clangd", "clang-tidy", "clangd", "clang-format")
+			add(tools, "gcc", "clangd", "cpp-lint", "clangd", "clang-format")
 			-- C++
-			add(tools, "g++", "clangd", "clang-tidy", "clangd", "clang-format")
+			add(tools, "g++", "clangd", "cpp-lint", "clangd", "clang-format")
 			-- C#
 			add(tools, "dotnet", "omnisharp", nil, nil, nil)
 			-- CSS
@@ -68,7 +68,7 @@ return {
 			-- Ruby
 			add(tools, "ruby", "solargraph", "rubocop", nil, "rufo")
 			-- Rust
-			add(tools, "rustc", "rust_analyzer", "clippy", "rust-analyzer", "rustfmt")
+			add(tools, "rustc", "rust_analyzer", "clippy", nil, "rustfmt")
 			-- R
 			add(tools, "r", "r_language_server", "lintr", nil, "formatR")
 			-- Markdown
@@ -76,21 +76,21 @@ return {
 			-- Bash
 			add(tools, "bash", "bashls", "shellcheck", nil, "shfmt")
 			-- Arduino
-			add(tools, "arduino-cli", "arduino-language-server", nil, nil, nil)
+			add(tools, "arduino-cli", "arduino_language_server", nil, nil, nil)
 			-- Azure Pipeline
-			add(tools, "az", "azure-pipelines-linter", nil, nil, nil)
+			add(tools, "az", "azure_pipelines_ls", nil, nil, nil)
 			-- CMake
-			add(tools, "cmake", "cmake-language-server", nil, nil, nil)
+			add(tools, "cmake", "cmake", nil, nil, nil)
 			-- Dart
 			add(tools, "dart", "dartls", "dartanalyzer", "dart", "dartfmt")
 			-- Docker
-			add(tools, "docker", nil, "hadolint", nil, nil)
+			add(tools, "docker", "dockerls", "hadolint", nil, nil)
 			-- Django
 			add(tools, "python3", "jinja_lsp", "flake8", nil, "black")
 			-- Gradle
-			add(tools, "gradle", "gradle-language-server", nil, nil, nil)
+			add(tools, "gradle", "gradle_ls", nil, nil, nil)
 			-- Helm
-			add(tools, "helm", "helm-language-server", nil, nil, nil)
+			add(tools, "helm", "helm_ls", nil, nil, nil)
 			-- Java
 			add(tools, "java", "jdtls", "checkstyle", "jdtls", "google-java-format")
 			-- JSON
@@ -102,13 +102,13 @@ return {
 			-- PHP
 			add(tools, "php", "intelephense", "phpcs", nil, "phpcs")
 			-- PowerShell
-			add(tools, "pwsh", "powershell", "pylint", nil, "powershell-script-analyzer")
+			add(tools, "pwsh", "powershelle", "pylint", nil, nil)
 			-- Puppet
 			add(tools, "puppet", "puppet", "puppet-lint", nil, nil)
 			-- SQL
 			add(tools, "sqlcmd", "sqlls", "sqlfluff", nil, nil)
 			-- Terraform
-			add(tools, "terraform", "terraform-ls", "tflint", nil, nil)
+			add(tools, "terraform", "terraformls", "tflint", nil, nil)
 			-- TypeScript
 			add(tools, "node", "tsserver", "eslint", nil, "prettier")
 			-- React
@@ -120,7 +120,7 @@ return {
 			-- Vimscript
 			add(tools, "vim", "vimls", nil, nil, nil)
 			-- YAML
-			add(tools, "node", nil, "yaml-language-server", nil, "prettier")
+			add(tools, "node", nil, "yamlls", nil, "prettier")
 		end
 		configure_tools()
 		-- Remove Duplicate LSP
