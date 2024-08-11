@@ -2,7 +2,8 @@
 Ada beberapa dependensi yang dibutuhkan untuk memenuhi beberapa error.
 
 ```
-sudo apt install python3 python3-pip nodejs git go ruby gem r-base ruby-dev
+sudo apt install python3 python3-pip nodejs \
+    git go ruby gem r-base ruby-dev cargo \
 ```
 
 - Python
