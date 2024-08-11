@@ -7,7 +7,7 @@ return {
 			markdown = { "markdownlint" }, -- Linter for markdown
 			-- python = { "flake8" }, -- Linter for Python
 			go = { "golangci-lint" }, -- Linter for Go
-			lua = { "selene" }, -- Linter for LUA
+			lua = { "luacheck" }, -- Linter for LUA
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
