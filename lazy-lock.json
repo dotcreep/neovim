@@ -13,7 +13,7 @@
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
-  "fzf-lua": { "branch": "main", "commit": "4465b8e2dc413b03137c09bc554ffe306411640d" },
+  "fzf-lua": { "branch": "main", "commit": "64a305a2490e48c44be9f5a489e01b995dd58c92" },
   "go.nvim": { "branch": "master", "commit": "e66c3240d26936428cd0f320dc5ffa1eb01538b8" },
   "gruvbox.nvim": { "branch": "main", "commit": "7a1b23e4edf73a39642e77508ee6b9cbb8c60f9e" },
   "guihua.lua": { "branch": "master", "commit": "225db770e36aae6a1e9e3a65578095c8eb4038d3" },

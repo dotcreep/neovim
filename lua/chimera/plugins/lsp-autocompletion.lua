@@ -30,7 +30,6 @@ return {
 				"vim-language-server",
 				"gopls",
 				"stylua",
-				"shellcheck",
 				"editorconfig-checker",
 				"gofumpt",
 				"golines",
@@ -63,10 +62,10 @@ return {
 			"tsserver",
 			"eslint",
 			"gopls",
-			"lua_ls",
+			--"lua_ls",
 			"bashls",
 			"pyright",
-			"textlsp",
+			--"textlsp",
 			"vuels",
 			"yamlls",
 			"jsonls",
@@ -78,7 +77,7 @@ return {
 			--"arduino_language_server", -- require unzip
 			"ansiblels",
 			"angularls",
-			"markdown_oxide",
+			--"markdown_oxide",
 		}
 		require("mason").setup()
 		require("mason-lspconfig").setup({
