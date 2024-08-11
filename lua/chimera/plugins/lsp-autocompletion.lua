@@ -57,6 +57,40 @@ return {
 				["mason-nvim-dap"] = true,
 			},
 		})
+    local function what_arch()
+      local handle = io.popen("uname -m")
+      local result = handle:read("*a")
+      handle:close()
+      if result:find("x86_64") then
+        return "x64"
+      elseif result:find("aarch64") then
+        return "arm64"
+      else
+        return "unknown"
+      end
+    end
+    local architecture = what_arch()
+    -- vim.notify("Detected architecture: " .. architecture)
+    if architecture == "arm64" then
+      lsp_support = nil
+    else
+      lsp_support = {
+        "clangd",
+        "harper_ls",
+        "graphql",
+        "glint",
+        "hyprls",
+        "texlab",
+        "helm_ls",
+        "lua_ls",
+        "luau_lsp",
+        "vale_ls",
+        "ols",
+        "ruby_lsp",
+        "vhdl_ls",
+        "lemminx",
+      }
+    end
 		local lsp_servers = {
 			---- https://github.com/williamboman/mason-lspconfig.nvim
 			"angularls",
@@ -65,9 +99,7 @@ return {
 			"bashls",
 			--"pkgbuild_language_server",
 			--"csharp_ls",
-			-- "ast_grep",
-			"clangd",
-			"harper_ls",
+			--"ast_grep",
 			"cmake",
 			"cssls",
 			"tailwindcss",
@@ -80,16 +112,12 @@ return {
 			"gopls",
 			"golangci_lint_ls",
 			"gradle_ls",
-			"graphql",
 			--"groovyls",
-			"glint",
 			--"hls",
 			"haxe_language_server",
-			"helm_ls",
 			"html",
 			--"htmx",
 			"twiggy_language_server",
-			"hyprls",
 			--"java_language_server",
 			"jdtls",
 			"eslint",
@@ -98,19 +126,13 @@ return {
 			"jsonls",
 			"kotlin_language_server",
 			"ltex",
-			"texlab",
 			"cssls",
 			-- "shopify_theme_ls",
-			"harper_ls",
-			"lua_ls",
-			"luau_lsp",
 			"grammarly",
 			"marksman",
-			"vale_ls",
 			"nginx_language_server",
 			--"nickel_ls",
 			"nim_langserver",
-			"ols",
 			"bsl_ls",
 			"opencl_ls",
 			"textlsp",
@@ -126,21 +148,23 @@ return {
 			"pylsp",
 			"pyright",
 			--"r_language_server",
-			"ruby_lsp",
 			--"sqlls",
 			"sqls",
 			"terraformls",
 			"tflint",
 			"taplo",
-			"glint",
-			"vhdl_ls",
 			"vimls",
 			"volar",
 			"vuels",
-			"lemminx",
 			"yamlls",
 			-- "vls",
 		}
+    --for _, lsp_ext in ipairs(lsp_support) do
+    --  if not vim.tbl_contains(lsp_servers, lsp_ext) then
+    --    table.insert(lsp_servers, lsp_ext)
+    --  end
+    --end
+    table.insert(lsp_servers, lsp_support)
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = lsp_servers,
