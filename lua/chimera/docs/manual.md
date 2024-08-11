@@ -1,15 +1,6 @@
 # Dependencies
+
 Ada beberapa dependensi yang dibutuhkan untuk memenuhi beberapa error.
-
-```
-sudo apt install python3 python3-pip nodejs \
-    git go ruby gem r-base ruby-dev cargo \
-```
-
-- Python
-- Node JS
-- Git
-- Golang
 
 ## Telescope
 
@@ -22,6 +13,7 @@ sudo apt install fd ripgrep
 ## Luacheck
 
 ### Error
+
 Akan ada error luacheck tidak bisa di pasang karena error
 
 ```
@@ -32,6 +24,7 @@ Warning: falling back to wget - install luasec to get native HTTPS support
 ```
 
 ### Solution
+
 ```
 sudo luarocks install luarocks
 ```

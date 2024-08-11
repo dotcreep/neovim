@@ -163,7 +163,7 @@ return {
 		local all_tools = combine_tools(tools.linter, tools.dap, tools.formatter)
 		local mason_tool_installer = require("mason-tool-installer")
 		mason_tool_installer.setup({
-			-- https://github.com/mfussenegger/nvim-lint
+			---- https://github.com/mfussenegger/nvim-lint
 			ensure_installed = all_tools,
 			auto_update = false,
 			run_on_start = true,
