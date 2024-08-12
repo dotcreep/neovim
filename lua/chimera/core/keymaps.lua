@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 local o = { noremap = true, silent = true }
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
+keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlight" })
 
-keymap.set("n", "<leader>rt", ":source %<CR>", { desc = "Reload" })
+keymap.set("n", "<leader>rt", "<cmd>source %<CR>", { desc = "Reload" })
 
 -- Basic Key
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select all text" }, o)
