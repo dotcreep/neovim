@@ -13,10 +13,13 @@ keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" }, o)
 
 -- Tab Navigation
 keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Open new tab" }, o)
-keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current tab" }, o)
+keymap.set("n", "<leader>tc", "<cmd>BufferLineCyclePrev<CR><cmd>bd #<CR>", { desc = "Close current tab" }, o)
 keymap.set("n", "<leader>tl", "<cmd>tabn<CR>", { desc = "Go to next tab" }, o)
 keymap.set("n", "<leader>th", "<cmd>tabp<CR>", { desc = "Go to previous tab" }, o)
 keymap.set("n", "<leader>tt", "<cmd>tabnew %<CR>", { desc = "Open in new tab" }, o)
+
+keymap.set("n", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
+keymap.set("n", "<C-PageDown>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
 
 -- Window Management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertical" }, o)
