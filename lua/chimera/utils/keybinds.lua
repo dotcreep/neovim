@@ -3,21 +3,22 @@ local api = vim.api.nvim_create_user_command
 local fun = require("chimera.utils.functions")
 local map = vim.api.nvim_set_keymap
 local o = { noremap = true, silent = true }
+local keymap = vim.keymap
 --------------------------------------------------------
 --- Command
 api("GitPush", function()
 	fun.gitCommitPush()
 end, { desc = "Git add, commit and push" })
 
-api("Nbranch", function()
+api("Newbranch", function()
 	fun.createBranch()
 end, { desc = "Create new branch" })
 
-api("Dbranch", function()
+api("Delbranch", function()
 	fun.deleteBranch()
 end, { desc = "Delete branch" })
 
-api("Sbranch", function()
+api("Switchbranch", function()
 	fun.switchBranch()
 end, { desc = "Switch branch" })
 
@@ -51,13 +52,14 @@ end, { desc = "Open Terminal" })
 
 --------------------------------------------------------
 --- Begin Git Area
-map("n", "<leader>gcp", ":GitPush<CR>", o)
-map("n", "<leader>gb", ":Nbranch<CR>", o)
-map("n", "<leader>gr", ":Dbranch()<CR>", o)
-map("n", "<leader>gw", ":Sbranch()<CR>", o)
-map("n", "<leader>gs", ":Gstatus<CR>", o)
-map("n", "<leader>gd", ":Gdiffsplit<CR>", o)
-map("n", "<leader>gc", ":Gcommit<CR>", o)
-map("n", "<leader>gp", ":Gpush<CR>", o)
-map("n", "<leader>gl", ":Gpull<CR>", o)
+keymap.set("n", "<leader>gcp", ":GitPush<CR>", { desc = "Git push in one action" }, o)
+keymap.set("n", "<leader>gb", ":Newbranch<CR>", { desc = "Create new branch" }, o)
+keymap.set("n", "<leader>gr", ":Delbranch()<CR>", { desc = "Delete branch" }, o)
+keymap.set("n", "<leader>gsw", ":Switchbranch()<CR>", { desc = "Switch branch" }, o)
+keymap.set("n", "<leader>gs", ":Gstatus<CR>", { desc = "Git status" }, o)
+keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>", { desc = "Show different in split" }, o)
+keymap.set("n", "<leader>gc", ":Gcommit<CR>", { desc = "Git commit" }, o)
+keymap.set("n", "<leader>gp", ":Gpush<CR>", { desc = "Git push" }, o)
+keymap.set("n", "<leader>gl", ":Gpull<CR>", { desc = "Git pull" }, o)
+keymap.set("n", "<leader>gwr", ":Gwrite<CR>", { desc = "Git add / write" }, o)
 --- End Git Area
