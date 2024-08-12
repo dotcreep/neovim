@@ -1,5 +1,5 @@
 local M = {}
-M.theme = {
+M.config = {
 	-- gruvbox, catppuccin, vscode, cyberdream, onedark
 	colorscheme = "gruvbox",
 	-- lualine, feline

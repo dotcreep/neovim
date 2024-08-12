@@ -29,28 +29,27 @@ keymap.set("n", "<C-k>", ":resize +2<CR>", { desc = "Resize window" }, o)
 keymap.set("n", "<C-j>", ":resize -2<CR>", { desc = "Resize window" }, o)
 
 -- Switch Window
-keymap.set("n", "<C-A-Left>", "<C-w>h", o)
-keymap.set("n", "<C-A-Right>", "<C-w>l", o)
-keymap.set("n", "<C-A-Up>", "<C-w>k", o)
-keymap.set("n", "<C-A-Down>", "<C-w>j", o)
-keymap.set("n", "<C-A-h>", "<C-w>h", o)
-keymap.set("n", "<C-A-l>", "<C-w>l", o)
-keymap.set("n", "<C-A-k>", "<C-w>k", o)
-keymap.set("n", "<C-A-j>", "<C-w>j", o)
+keymap.set("n", "<C-A-Left>", "<C-w>h", { desc = "Switch window to left" }, o)
+keymap.set("n", "<C-A-Right>", "<C-w>l", { desc = "Switch window to right" }, o)
+keymap.set("n", "<C-A-Up>", "<C-w>k", { desc = "Switch winoow to above" }, o)
+keymap.set("n", "<C-A-Down>", "<C-w>j", { desc = "Switch window to below" }, o)
+keymap.set("n", "<C-A-h>", "<C-w>h", { desc = "Switch window to left" }, o)
+keymap.set("n", "<C-A-l>", "<C-w>l", { desc = "Switch window to right" }, o)
+keymap.set("n", "<C-A-k>", "<C-w>k", { desc = "Switch window to above" }, o)
+keymap.set("n", "<C-A-j>", "<C-w>j", { desc = "Switch window to below" }, o)
 
 -- File Explorer
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", o)
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" }, o)
 
 --- Resize Split Tab
-keymap.set("n", "<C-h>", ":vertical resize +2<CR>", o)
-keymap.set("n", "<C-l>", ":vertical resize -2<CR>", o)
-keymap.set("n", "<C-k>", ":resize +2<CR>", o)
-keymap.set("n", "<C-j>", ":resize -2<CR>", o)
+keymap.set("n", "<C-h>", ":vertical resize +2<CR>", { desc = "Increase size vertical split window" }, o)
+keymap.set("n", "<C-l>", ":vertical resize -2<CR>", { desc = "Decrease size vertical split window" }, o)
+keymap.set("n", "<C-k>", ":resize +2<CR>", { desc = "Increase size horizontal split window" }, o)
+keymap.set("n", "<C-j>", ":resize -2<CR>", { desc = "Decrease size horizontal split window" }, o)
 
 --- Open Terminal
-keymap.set("n", "<leader>tv", ":OpenTerminalVertical<CR>", o)
-keymap.set("n", "<leader>ts", ":OpenTerminal<CR>", o)
-keymap.set("n", "<leader>te", ":ToggleTerm<CR>", o)
+keymap.set("n", "<leader>tv", ":OpenTerminalVertical<CR>", { desc = "Open terminal in vertical" }, o)
+keymap.set("n", "<leader>ts", ":OpenTerminal<CR>", { desc = "Open terminal in horizontal" }, o)
+keymap.set("n", "<leader>te", ":ToggleTerm<CR>", { desc = "Open terminal" }, o)
 
 ------------------------------------------------------------------------
---- Third Party
