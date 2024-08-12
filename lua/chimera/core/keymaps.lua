@@ -9,7 +9,8 @@ keymap.set("n", "<leader>rt", "<cmd>source %<CR>", { desc = "Reload" })
 
 -- Basic Key
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select all text" }, o)
-keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" }, o)
+keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" }, o)
+keymap.set("", "<leader>cc", ":%s///g", { desc = "Replace text" })
 
 -- Tab Navigation
 keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "Open new tab" }, o)
