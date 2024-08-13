@@ -24,6 +24,8 @@ keymap.set("n", "<leader>tt", "<cmd>tabnew %<CR>", { desc = "Open in new tab" },
 -- Switch Tab
 keymap.set("n", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
 keymap.set("n", "<C-PageDown>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
+keymap.set("i", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
+keymap.set("i", "<C-PageDown>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
 
 -- Window Management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertical" }, o)
@@ -44,14 +46,6 @@ keymap.set("n", "<C-A-h>", "<C-w>h", { desc = "Switch window to left" }, o)
 keymap.set("n", "<C-A-l>", "<C-w>l", { desc = "Switch window to right" }, o)
 keymap.set("n", "<C-A-k>", "<C-w>k", { desc = "Switch window to above" }, o)
 keymap.set("n", "<C-A-j>", "<C-w>j", { desc = "Switch window to below" }, o)
-keymap.set("n", "<A-Left>", "<C-w>h", { desc = "Switch window to left" }, o)
-keymap.set("n", "<A-Right>", "<C-w>l", { desc = "Switch window to right" }, o)
-keymap.set("n", "<A-Up>", "<C-w>k", { desc = "Switch winoow to above" }, o)
-keymap.set("n", "<A-Down>", "<C-w>j", { desc = "Switch window to below" }, o)
-keymap.set("n", "<A-h>", "<C-w>h", { desc = "Switch window to left" }, o)
-keymap.set("n", "<A-l>", "<C-w>l", { desc = "Switch window to right" }, o)
-keymap.set("n", "<A-k>", "<C-w>k", { desc = "Switch window to above" }, o)
-keymap.set("n", "<A-j>", "<C-w>j", { desc = "Switch window to below" }, o)
 
 -- File Explorer
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" }, o)
