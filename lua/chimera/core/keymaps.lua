@@ -10,8 +10,8 @@ keymap.set("n", "<leader>rt", "<cmd>source %<CR>", { desc = "Reload" }, o)
 -- Basic Key
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select all text" }, o)
 keymap.set("i", "<C-a>", "<Esc>ggVG", { desc = "Select all text" }, o)
-keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>a", { desc = "Save file" }, o)
-keymap.set("n", "<C-s>", "<cmd>w<CR>a", { desc = "Save file" }, o)
+keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>", { desc = "Save file" }, o)
+keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" }, o)
 keymap.set("n", "<leader>cc", ":%s///g", { desc = "Replace text" })
 
 -- Tab Navigation
@@ -44,6 +44,14 @@ keymap.set("n", "<C-A-h>", "<C-w>h", { desc = "Switch window to left" }, o)
 keymap.set("n", "<C-A-l>", "<C-w>l", { desc = "Switch window to right" }, o)
 keymap.set("n", "<C-A-k>", "<C-w>k", { desc = "Switch window to above" }, o)
 keymap.set("n", "<C-A-j>", "<C-w>j", { desc = "Switch window to below" }, o)
+keymap.set("n", "<A-Left>", "<C-w>h", { desc = "Switch window to left" }, o)
+keymap.set("n", "<A-Right>", "<C-w>l", { desc = "Switch window to right" }, o)
+keymap.set("n", "<A-Up>", "<C-w>k", { desc = "Switch winoow to above" }, o)
+keymap.set("n", "<A-Down>", "<C-w>j", { desc = "Switch window to below" }, o)
+keymap.set("n", "<A-h>", "<C-w>h", { desc = "Switch window to left" }, o)
+keymap.set("n", "<A-l>", "<C-w>l", { desc = "Switch window to right" }, o)
+keymap.set("n", "<A-k>", "<C-w>k", { desc = "Switch window to above" }, o)
+keymap.set("n", "<A-j>", "<C-w>j", { desc = "Switch window to below" }, o)
 
 -- File Explorer
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" }, o)
