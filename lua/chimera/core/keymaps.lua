@@ -22,6 +22,8 @@ keymap.set("n", "<leader>th", "<cmd>BufferLineCyclePrev<CR>", { desc = "Go to pr
 keymap.set("n", "<leader>tt", "<cmd>tabnew %<CR>", { desc = "Open in new tab" }, o)
 
 -- Switch Tab
+keymap.set("n", "<A-Left>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
+keymap.set("n", "<A-Right>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
 keymap.set("n", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
 keymap.set("n", "<C-PageDown>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
 keymap.set("i", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
