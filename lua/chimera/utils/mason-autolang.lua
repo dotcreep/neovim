@@ -64,20 +64,20 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "node", "tsserver", "eslint", "node-debug2-adapter", "prettier" }, -- Node.js / Javascript
 	{ "go", "gopls", "golangci_lint_ls", "delve", "gofmt" }, -- Golang
 	{ "luac", "lua_ls", "luacheck", "nlua", "stylua" }, -- Lua
-	{ "gcc", "clangd", "cpp-lint", "clangd", "clang-format" }, -- C
-	{ "g++", "clangd", "cpp-lint", "clangd", "clang-format" }, -- C++
+	{ "gcc", "clangd", "cpplint", "cpptools", "clang-format" }, -- C
+	{ "g++", "clangd", "cpplint", "cpptools", "clang-format" }, -- C++
 	{ "dotnet", "omnisharp", nil, nil, nil }, -- C#
 	{ "node", nil, "stylelint", nil, "prettier" }, -- CSS
 	{ "node", nil, "htmlhint", nil, "prettier" }, -- HTML
 	{ "ruby", "solargraph", "rubocop", nil, "rufo" }, -- Ruby
 	{ "rustc", "rust_analyzer", "clippy", nil, "rustfmt" }, -- Rust
 	{ "r", "r_language_server", "lintr", nil, "formatR" }, -- R
-	{ "node", nil, "markdownlint", nil, "prettier" }, -- Markdown
+	{ "node", "remark_ls", "vale", nil, "remark_cli" }, -- Markdown
 	{ "bash", "bashls", "shellcheck", nil, "shfmt" }, -- Bash
 	{ "arduino-cli", "arduino_language_server", nil, nil, nil }, -- Arduino
 	{ "az", "azure_pipelines_ls", nil, nil, nil }, -- Azure Pipeline
 	{ "cmake", "cmake", nil, nil, nil }, -- CMake
-	{ "dart", "dartls", "dartanalyzer", "dart", "dartfmt" }, -- Dart
+	{ "dart", "dcm", "dcm", "dart-debug-adapter", "dcm" }, -- Dart
 	{ "docker", "dockerls", "hadolint", nil, nil }, -- Docker
 	{ "python3", "jinja_lsp", "flake8", nil, "black" }, -- Django
 	{ "gradle", "gradle_ls", nil, nil, nil }, -- Gradle

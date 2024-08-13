@@ -20,7 +20,16 @@ return {
 				["mason-nvim-dap"] = true,
 			},
 		})
-		require("mason").setup()
+		local mason = require("mason")
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
 		require("mason-lspconfig").setup({
 			ensure_installed = lsp_servers,
 		})
