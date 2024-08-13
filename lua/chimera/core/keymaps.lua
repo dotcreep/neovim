@@ -3,14 +3,16 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 local o = { noremap = true, silent = true }
 
-keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlight" })
+keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlight" }, o)
 
-keymap.set("n", "<leader>rt", "<cmd>source %<CR>", { desc = "Reload" })
+keymap.set("n", "<leader>rt", "<cmd>source %<CR>", { desc = "Reload" }, o)
 
 -- Basic Key
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select all text" }, o)
-keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" }, o)
-keymap.set("", "<leader>cc", ":%s///g", { desc = "Replace text" })
+keymap.set("i", "<C-a>", "<Esc>ggVG", { desc = "Select all text" }, o)
+keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>a", { desc = "Save file" }, o)
+keymap.set("n", "<C-s>", "<cmd>w<CR>a", { desc = "Save file" }, o)
+keymap.set("n", "<leader>cc", ":%s///g", { desc = "Replace text" })
 
 -- Tab Navigation
 keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "Open new tab" }, o)
@@ -58,16 +60,3 @@ keymap.set("n", "<leader>ts", "<cmd>OpenTerminal<CR>", { desc = "Open terminal i
 keymap.set("n", "<leader>te", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" }, o)
 
 ------------------------------------------------------------------------
---- Begin Git Area
-keymap.set("n", "<leader>gcp", "<cmd>GitPush<CR>", { desc = "Git push in one action" }, o)
-keymap.set("n", "<leader>gb", "<cmd>Newbranch<CR>", { desc = "Create new branch" }, o)
-keymap.set("n", "<leader>gr", "<cmd>Delbranch<CR>", { desc = "Delete branch" }, o)
-keymap.set("n", "<leader>gsw", "<cmd>Switchbranch<CR>", { desc = "Switch branch" }, o)
-keymap.set("n", "<leader>gst", "<cmd>Git status<CR>", { desc = "Git status" }, o)
-keymap.set("n", "<leader>gd", "<cmd>Git diff<CR>", { desc = "Show different in split" }, o)
-keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" }, o)
-keymap.set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" }, o)
-keymap.set("n", "<leader>gl", "<cmd>Git pull<CR>", { desc = "Git pull" }, o)
-keymap.set("n", "<leader>gwr", "<cmd>Gwrite<CR>", { desc = "Git write" }, o)
-keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>", { desc = "Git add all" }, o)
---- End Git Area
