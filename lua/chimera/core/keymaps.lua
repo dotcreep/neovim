@@ -19,6 +19,7 @@ keymap.set("n", "<leader>tl", "<cmd>BufferLineCycleNext<CR>", { desc = "Go to ne
 keymap.set("n", "<leader>th", "<cmd>BufferLineCyclePrev<CR>", { desc = "Go to previous tab" }, o)
 keymap.set("n", "<leader>tt", "<cmd>tabnew %<CR>", { desc = "Open in new tab" }, o)
 
+-- Switch Tab
 keymap.set("n", "<C-PageUp>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Switch to left tab" }, o)
 keymap.set("n", "<C-PageDown>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to right tab" }, o)
 
@@ -57,3 +58,16 @@ keymap.set("n", "<leader>ts", "<cmd>OpenTerminal<CR>", { desc = "Open terminal i
 keymap.set("n", "<leader>te", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" }, o)
 
 ------------------------------------------------------------------------
+--- Begin Git Area
+keymap.set("n", "<leader>gcp", "<cmd>GitPush<CR>", { desc = "Git push in one action" }, o)
+keymap.set("n", "<leader>gb", "<cmd>Newbranch<CR>", { desc = "Create new branch" }, o)
+keymap.set("n", "<leader>gr", "<cmd>Delbranch<CR>", { desc = "Delete branch" }, o)
+keymap.set("n", "<leader>gsw", "<cmd>Switchbranch<CR>", { desc = "Switch branch" }, o)
+keymap.set("n", "<leader>gst", "<cmd>Git status<CR>", { desc = "Git status" }, o)
+keymap.set("n", "<leader>gd", "<cmd>Git diff<CR>", { desc = "Show different in split" }, o)
+keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" }, o)
+keymap.set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" }, o)
+keymap.set("n", "<leader>gl", "<cmd>Git pull<CR>", { desc = "Git pull" }, o)
+keymap.set("n", "<leader>gwr", "<cmd>Gwrite<CR>", { desc = "Git write" }, o)
+keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>", { desc = "Git add all" }, o)
+--- End Git Area
