@@ -70,7 +70,7 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "node", nil, "stylelint", nil, "prettier" }, -- CSS
 	{ "node", nil, "htmlhint", nil, "prettier" }, -- HTML
 	{ "ruby", "solargraph", "rubocop", nil, "rufo" }, -- Ruby
-	{ "rustc", "rust_analyzer", "clippy", nil, "rustfmt" }, -- Rust
+	{ "rustc", "rust_analyzer", "trivy", nil, "rusttywind" }, -- Rust
 	{ "r", "r_language_server", "lintr", nil, "formatR" }, -- R
 	{ "node", "remark_ls", "vale", nil, "remark_cli" }, -- Markdown
 	{ "bash", "bashls", "shellcheck", nil, "shfmt" }, -- Bash

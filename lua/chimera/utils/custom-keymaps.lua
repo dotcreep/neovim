@@ -64,3 +64,5 @@ keymap.set("n", "<leader>gl", "<cmd>Git pull<CR>", { desc = "Git pull" }, o)
 keymap.set("n", "<leader>gwr", "<cmd>Gwrite<CR>", { desc = "Git write" }, o)
 keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>", { desc = "Git add all" }, o)
 --- End Git Area
+
+keymap.set("n", "<leader>rr", ":Rundev<CR>", { desc = "Running program directly" }, o)
