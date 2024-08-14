@@ -7,6 +7,8 @@ M.setup = function(config)
     require("buggy.setup")
   elseif config.profile == 'chimera' then
     require("chimera")
+  elseif config.profile == 'dolphin' then
+    require('dolphin')
   end
 end
 
