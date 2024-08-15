@@ -10,8 +10,8 @@
 8. Gitsigns
 9. Indent Blackline
 10. LSP Completions
-11. Lualine
-12. Markview
+11. Lualine             // Statusline UI
+12. Markview            // View markdown in normal mode
 13. Mason
 14. Multiple Cursors
 15. Neogit
@@ -39,7 +39,7 @@
 - [ ] gitsigns
 - [ ] indent-blackline
 - [ ] lsp-completion
-- [ ] lualine
+- [x] lualine               - Complete modify to make more beauty
 - [ ] markview
 - [ ] mason
 - [ ] multiple-cursors
@@ -47,7 +47,7 @@
 - [ ] noice
 - [ ] nvim-lint
 - [ ] nvim-surround
-- [ ] nvim-tree
+- [x] nvim-tree             - Maybe need fix on some area or add something still i don't know
 - [ ] telescope
 - [ ] themery
 - [ ] toggleterm

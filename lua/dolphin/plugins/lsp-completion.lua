@@ -7,12 +7,11 @@ return {
 		"hrsh7th/cmp-cmdline", -- Command line completions
 		"L3MON4D3/LuaSnip", -- Snippet engine
 		"saadparwaiz1/cmp_luasnip", -- Snippet completions
-    "onsails/lspkind-nvim", -- pictograms
+		"onsails/lspkind-nvim", -- pictograms
 	},
 	config = function()
-		local status, cmp = pcall(require, "cmp")
-    local lspkind = require('lspkind')
-    if (not status) then return end
+		local cmp = require("cmp")
+		local lspkind = require("lspkind")
 		cmp.setup({
 			window = {
 				completion = cmp.config.window.bordered(),
@@ -35,9 +34,10 @@ return {
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				["<CR>"] = cmp.mapping.confirm({ 
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true}),
+				["<CR>"] = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+				}),
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" }, -- Source LSP
@@ -47,16 +47,16 @@ return {
 			}, {
 				{ name = "buffer" },
 			}),
-      formatting = {
-        format = lspkind.cmp_format({
-          wirth_text = false, max_width = 50
-        })
-      },
+			formatting = {
+				format = lspkind.cmp_format({
+					wirth_text = false,
+					max_width = 50,
+				}),
+			},
 		})
-    vim.cmd [[
+		vim.cmd([[
       set completeopt=menuone,noinsert,noselect
       highlight! default link CmpItemKind CmpItemMenuDefault
-    ]]
+    ]])
 	end,
 }
-

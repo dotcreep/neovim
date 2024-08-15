@@ -4,45 +4,15 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		local file_symbols = {
-			py = "", -- Python
-			js = "", -- JavaScript / Node.js
-			go = "󰟓", -- Golang
-			lua = "", -- Lua
-			c = "󰙱", -- C
-			cpp = "󰙲", -- C++
-			cs = "󰌛", -- C#
-			css = "", -- CSS
-			html = "", -- HTML
-			rb = "", -- Ruby
-			rs = "", -- Rust
-			r = "", -- R
-			md = "", -- Markdown
-			sh = "󱆃", -- Bash
-			ino = "", -- Arduino
-			yml = "", -- YAML
-			json = "", -- JSON
-			php = "󰌟", -- PHP
-			ps1 = "", -- PowerShell
-			pp = "", -- Puppet
-			sql = "", -- SQL
-			tf = "", -- Terraform
-			ts = "󰛦", -- TypeScript
-			vue = "", -- Vue.js
-			java = "", -- Java
-			kt = "", -- Kotlin
-			gradle = "", -- Gradle
-			dart = "", -- Dart
-			dockerfile = "", -- Docker
-			helm = "󱃾", -- Helm
-			angular = "󰚿", -- AngularJS
-			azure = "", -- Azure Pipeline
-			cmake = "", -- CMake
-			vim = "", -- Vimscript
-		}
-		local function get_file_symbol(ext)
-			return file_symbols[ext] or ""
+		local function progress_bar()
+			local current_line = vim.fn.line(".")
+			local total_lines = vim.fn.line("$")
+			local chars = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" }
+			local line_ratio = current_line / total_lines
+			local index = math.ceil(line_ratio * #chars)
+			return chars[index]
 		end
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -54,8 +24,8 @@ return {
 					winbar = {},
 				},
 				ignore_focus = {},
-				always_divide_middle = true,
-				globalstatus = false,
+				always_divide_middle = false,
+				globalstatus = true,
 				refresh = {
 					statusline = 1000,
 					tabline = 1000,
@@ -64,29 +34,59 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff" },
+				lualine_b = {
+					"branch",
+				},
 				lualine_c = {
-					{ "diagnostics" },
+					{
+						"diff",
+						symbols = {
+							added = " ",
+							modified = "柳",
+							removed = " ",
+						},
+						diff_color = {
+							added = {
+								fg = "#2da44e",
+							},
+							modified = {
+								fg = "#e16f24",
+							},
+							removed = {
+								fg = "#fa4549",
+							},
+						},
+					},
+					{
+						"diagnostics",
+						symbols = {
+							error = " ", -- Ikon untuk kesalahan
+							warn = " ", -- Ikon untuk peringatan
+							info = " ", -- Ikon untuk informasi
+							hint = " ", -- Ikon untuk petunjuk
+						},
+					},
 					{
 						"filename",
 						fmt = function(filename)
 							local ext = vim.fn.expand("%:e")
-							local symbol = get_file_symbol(ext)
-							return symbol .. " " .. filename
+							local symbol = require("nvim-web-devicons").get_icon(ext, "", { default = true })
+							return "%=" .. symbol .. " " .. filename
 						end,
 					},
 				},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = {
 					function()
-						local progress = "%3p%%"
 						local location = "%l:%v"
-						return progress .. " " .. location
+						return progress_bar() .. " " .. location
 					end,
 				},
 				lualine_z = {
 					{
-						'os.date("%H:%M")',
+						function()
+							return "" .. " " .. os.date("%H:%M")
+						end,
 					},
 				},
 			},
