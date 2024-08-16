@@ -9,7 +9,7 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- Snippet completions
 		"onsails/lspkind-nvim", -- pictograms
 	},
-	config = function()
+	config = vim.schedule(function()
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
 		cmp.setup({
@@ -58,5 +58,5 @@ return {
       set completeopt=menuone,noinsert,noselect
       highlight! default link CmpItemKind CmpItemMenuDefault
     ]])
-	end,
+	end),
 }

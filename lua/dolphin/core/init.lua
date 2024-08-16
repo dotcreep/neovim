@@ -15,19 +15,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("dolphin.core.options")
-require("dolphin.core.keymaps")
-require("dolphin.core.custom-keymaps")
 
 require("lazy").setup({
 	spec = {
 		{ import = "dolphin.plugins" },
 		{ import = "dolphin.plugins.colorschemes" },
 		-- { import = "dolphin.plugins.editor" },
-		-- { import = "dolphin.plugins.ui" },
+		{ import = "dolphin.plugins.ui" },
 		-- { import = "dolphin.plugins.utils" },
 		-- { import = "dolphin.ui.statusline" },
 		-- { import = "dolphin.ui.colorschemes" },
 	},
-	install = { colorschemes = "gruvbox" },
+	-- install = { colorschemes = "gruvbox" },
 	checker = { enable = true },
 })
+
+require("dolphin.core.keymaps")
+require("dolphin.core.custom-keymaps")
