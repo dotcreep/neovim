@@ -27,29 +27,27 @@
 
 
 # Done to setup
-- [ ] colorscheme
-
-- [ ] auto-session
-- [ ] autopairs
-- [ ] bufferline
-- [ ] dashboard-nvim
-- [ ] debugging
-- [ ] development
-- [ ] formatting
-- [ ] gitsigns
-- [ ] indent-blackline
-- [ ] lsp-completion
-- [x] lualine               - Complete modify to make more beauty
-- [ ] markview
-- [ ] mason
-- [ ] multiple-cursors
-- [ ] neogit
-- [ ] noice
-- [ ] nvim-lint
-- [ ] nvim-surround
 - [x] nvim-tree             - Maybe need fix on some area or add something still i don't know
-- [ ] telescope
-- [ ] themery
-- [ ] toggleterm
-- [ ] trouble
-- [ ] which-key
+- [x] lualine               - Complete modify to make more beauty
+- [x] bufferline
+- [x] nvim-cmp
+- [x] lsp
+- [x] mason
+- [x] autopairs
+- [x] formatting
+- [x] nvim-lint
+- [x] development
+- [x] which-key
+- [x] telescope
+- [x] noice
+- [x] dashboard-nvim (greeter, alphaniv)
+- [x] themery
+- [x] markview
+- [x] nvim-surround
+- [x] indent-blackline
+- [x] auto-session (persistence)
+- [x] gitsigns
+- [x] trouble
+- [x] toggleterm
+- [x] debugging
+- [x] colorscheme

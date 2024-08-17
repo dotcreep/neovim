@@ -5,11 +5,14 @@
 
 # Need to know
 
-| lua name | plugin  | status |
-| -------- | ------- | ------ |
-| alpaca   | packer  | test   |
-| buggy    | packer  | beta   |
-| chimera  | lazy    | final  |
+| lua name | plugin  |   status   |
+| -------- | ------- | ---------- |
+| alpaca   | packer  | test       |
+| buggy    | packer  | beta       |
+| chimera  | lazy    | final      |
+| dolphin  | lazy    | completed  |
+
+Latest version is completed to be an IDE
 
 # Packer
 
@@ -30,10 +33,18 @@ Run `:PackerInstall` when opening on nvim
 
 Install dependencies
 
+- git
+- nodejs
+- python
+- go
+- fzf        - fzf
 - `fd-find`  - **fd**
 - `ripgrep`  - **rg**
 - `git`      - **git**
 - `bat`      - **bat**
+- viu
+- chafa
+- ueberzugpp
 
 ## Feature
 ### Development
