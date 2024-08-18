@@ -37,10 +37,10 @@ return {
       fidget_interval = 200,
     },
     text = {
-      spinner = 'dots',
-      done = '✔',
-      commenced = 'Started',
-      completed = 'Completed',
+        spinner = 'dots',
+        done = '✔',
+        commenced = 'Started',
+        completed = 'Completed',
     },
     -- Options related to logging
     logger = {

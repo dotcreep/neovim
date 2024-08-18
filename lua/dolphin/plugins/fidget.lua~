@@ -32,16 +32,7 @@ return {
         enable = true, -- Integrate with wojciech-kulik/xcodebuild.nvim (if installed)
       },
     },
-    timer = {
-      spinner_interval = 100,
-      fidget_interval = 200,
-    },
-    text = {
-      spinner = 'dots',
-      done = '✔',
-      commenced = 'Started',
-      completed = 'Completed',
-    },
+
     -- Options related to logging
     logger = {
       level = vim.log.levels.WARN, -- Minimum logging level
