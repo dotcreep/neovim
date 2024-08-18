@@ -67,7 +67,7 @@ local tools = {
 local configurations = {                                                                                                   -- Konfigurasi untuk berbagai bahasa dan tools
   { "python3",     "pyright",                 "flake8",                    "debugpy",              "black" },              -- Python
   { "node",        "tsserver",                "eslint",                    "node-debug2-adapter",  "prettier" },           -- Node.js / Javascript
-  { "go",          "gopls",                   "golangci_lint_ls",          "delve",                "gofumt" },             -- Golang
+  { "go",          "gopls",                   "golangci_lint_ls",          "delve",                "gofumpt" },            -- Golang
   { "luac",        "lua_ls",                  "luacheck",                  nil,                    "stylua" },             -- Lua
   { "gcc",         "clangd",                  "cpplint",                   "cpptools",             "clang-format" },       -- C
   { "g++",         "clangd",                  "cpplint",                   "cpptools",             "clang-format" },       -- C++
