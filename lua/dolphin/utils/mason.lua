@@ -65,9 +65,9 @@ local tools = {
 }
 
 local configurations = {                                                                                                   -- Konfigurasi untuk berbagai bahasa dan tools
-  { "python3",     "pyright",                 "flake8",                    "debugpy",              "black" },              -- Python
+  { "python3",     "pylsp",                   "flake8",                    "debugpy",              "black" },              -- Python
   { "node",        "tsserver",                "eslint",                    "node-debug2-adapter",  "prettier" },           -- Node.js / Javascript
-  { "go",          "gopls",                   "golangci_lint_ls",          "delve",                "gofumt" },             -- Golang
+  { "go",          "gopls",                   "golangci-lint",             "delve",                "gofumpt" },            -- Golang
   { "luac",        "lua_ls",                  "luacheck",                  nil,                    "stylua" },             -- Lua
   { "gcc",         "clangd",                  "cpplint",                   "cpptools",             "clang-format" },       -- C
   { "g++",         "clangd",                  "cpplint",                   "cpptools",             "clang-format" },       -- C++
@@ -75,7 +75,7 @@ local configurations = {                                                        
   { "node",        "cssls",                   "stylelint",                 nil,                    "prettier" },           -- CSS
   { "node",        "html",                    "htmlhint",                  nil,                    "prettier" },           -- HTML
   { "ruby",        "solargraph",              "rubocop",                   nil,                    "rufo" },               -- Ruby
-  { "rustc",       "rust_analyzer",           "trivy",                     nil,                    "rusttywind" },         -- Rust
+  { "rustc",       "rust_analyzer",           "trivy",                     nil,                    "rustywind" },          -- Rust
   { "r",           "r_language_server",       "lintr",                     nil,                    "formatR" },            -- R
   { "node",        "remark_ls",               "vale",                      nil,                    "remark_cli" },         -- Markdown
   { "bash",        "bashls",                  "shellcheck",                "bash-debug-adapter",   "shfmt" },              -- Bash

@@ -12,7 +12,26 @@ return {
     local mason_tools = require("dolphin.utils.mason")
     local lsp_servers, other_tools = mason_tools.get_tools()
     local function setup(lsp)
-      lspconfig[lsp].setup({})
+      if lsp == "gopls" then
+        lspconfig.gopls.setup {
+          cmd = { "gopls" },
+          filetypes = { "go", "gomod", "gowork", "gotmpl" },
+          root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+              },
+              staticcheck = true,
+            },
+          },
+        }
+      else
+        lspconfig[lsp].setup({})
+      end
     end
     for _, lsp in ipairs(lsp_servers) do
       setup(lsp)

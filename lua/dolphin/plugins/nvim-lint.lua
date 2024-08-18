@@ -4,41 +4,41 @@ return {
   config = function()
     local lint = require("lint")
     lint.linters_by_ft = {
-      lua = { "luacheck", },
-      python = { "flake8", "trivy" },
-      javascript = { "eslint", "trivy" },
-      typescript = { "eslint", "trivy" },
-      html = { "htmlhint", },
-      css = { "stylelint", },
-      markdown = { "vale", "markdownlint", "markdownlint-cli2", "proselint" },
-      bash = { "shellcheck", "shellharden" },
-      ruby = { "rubocop" },
-      go = { "golangci-lint", "trivy", },
-      rust = { "bacon", "trivy" },
+      -- See more : https://github.com/mfussenegger/nvim-lint
+      -- Completelty Checking
+      markdown = { "markdownlint" }, -- Linter for markdown
+      python = { "flake8" },         -- Linter for Python
+      go = { "golangcilint" },       -- Linter for Go
+      lua = { "luacheck" },          -- Linter for LUA
+      javascript = { "eslint_d" },
+      typescript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+      svelte = { "eslint_d" },
+      html = { "htmlhint" },
+      css = { "stylelint" },
+      bash = { "shellcheck" },
+      ruby = { "ruby" },
+      rust = { "rstlint" },
       c = { "cpplint" },
       cpp = { "cpplint" },
-      ["c#"] = { "trivy", },
-      docker = { "hadolint", "trivy", "snyk" },
+      ["c#"] = { "clangtidy", "trivy", },
+      docker = { "hadolint", "trivy" },
       java = { "checkstyle", "trivy" },
       terraform = { "tflint", "trivy", "snyk" },
-      ansible = { "ansible-lint" },
-      dart = { "dcm", "trivy" },
-      helm = { "snyk", "trivy" },
-      angular = { "eslint" },
-      vue = { "eslint" },
-      react = { "eslint" },
-      -- Use the "*" filetype to run linters on all filetypes.
-      ['*'] = { 'global linter' },
-      -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
-      ['_'] = { 'fallback linter' },
-      -- ["*"] = { "typos" },
+      ansible = { "ansible_lint" },
+      dart = { "trivy" },
+      helm = { "tflint", "trivy" },
+      angular = { "eslint_d" },
+      vue = { "eslint_d" },
+      react = { "eslint_d" },
     }
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
       group = lint_augroup,
       callback = function()
         lint.try_lint()
-      end
+      end,
     })
     vim.keymap.set("n", "<leader>l", function()
       lint.try_lint()
