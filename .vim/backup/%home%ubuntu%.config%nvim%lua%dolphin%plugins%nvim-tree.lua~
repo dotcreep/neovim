@@ -14,7 +14,7 @@ return {
         timeout = 400,
       },
       view = {
-        width = 35,
+        width = 30,
         side = "left",
         number = false,
         relativenumber = false,

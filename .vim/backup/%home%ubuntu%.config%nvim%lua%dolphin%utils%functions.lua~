@@ -10,6 +10,29 @@ function M.notification()
   end
 end
 
+--- Running Program
+function M.Rundev(file)
+  local ext = file:match("^.+(%..+)$")
+  local file_lang = '"' .. file .. '"'
+  local cmd
+  if ext == ".go" then
+    cmd = "go run " .. file_lang
+  elseif ext == ".py" then
+    cmd = "python " .. file_lang
+  elseif ext == ".js" then
+    cmd = "node " .. file_lang
+  elseif ext == ".java" then
+    cmd = "java " .. file_lang
+  elseif ext == ".sh" then
+    cmd = "bash " .. file_lang
+  else
+    print("Unsupported file type")
+    return
+  end
+
+  c("split | terminal " .. cmd)
+  c("resize 10")
+end
 
 --- End Running Program
 

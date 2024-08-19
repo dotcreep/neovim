@@ -43,4 +43,4 @@ keymap.set("n", "<A-j>", "<cmd>resize -2<CR>", { desc = "Decrease size horizonta
 keymap.set("n", "<leader>tv", "<cmd>OpenTerminalVertical<CR>", { desc = "Open terminal in vertical" })
 keymap.set("n", "<leader>ts", "<cmd>OpenTerminal<CR>", { desc = "Open terminal in horizontal" })
 keymap.set("n", "<leader>te", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" })
-keymap.set('n', '<C-d>', "<cmd>BufferLineCyclePrev<CR><cmd>bd #<CR><cmd>q<CR>", { desc = "Close terminal" })
+keymap.set('n', '<C-d>', "<cmd>BufferLineCyclePrev<CR><cmd>bd #<CR>", { desc = "Close terminal" })

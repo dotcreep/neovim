@@ -13,7 +13,7 @@ command("Vsetup", function()
 end, { desc = "Open setup in vertical" })
 
 command("RunCode", function()
-	local file = expand("%:t")
+	local file = expand("%")
 	local ext = file:match("^.+(%..+)$")
 	local file_lang = '"' .. file .. '"'
 	local run

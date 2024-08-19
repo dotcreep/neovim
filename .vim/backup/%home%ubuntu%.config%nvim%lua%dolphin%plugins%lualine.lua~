@@ -96,16 +96,19 @@ return {
           {
             "filename",
             fmt = function(filename)
-              local name_without_ext = vim.fn.fnamemodify(filename, ":t:r")
+              local ext = vim.fn.fnamemodify(filename, ":e")
               local devicons = require("nvim-web-devicons")
-              local icon = devicons.get_icon(name_without_ext, "", { default = false })
+              local icon = devicons.get_icon(ext, "", { default = false })
+
               if not icon then
-                local ext = vim.fn.expand("%:e")
-                icon = devicons.get_icon(ext, "", { default = true })
+                local name_without_ext = vim.fn.fnamemodify(filename, ":t:r")
+                icon = devicons.get_icon(name_without_ext, "", { default = true })
               end
+
               if not icon then
-                icon = require("nvim-web-devicons").get_icon("", "", { default = true })
+                icon = devicons.get_icon("", "", { default = true })
               end
+
               return "%=" .. (icon or " ") .. " " .. filename
             end,
             path = 1,
