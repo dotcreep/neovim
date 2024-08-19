@@ -1,7 +1,7 @@
 # Contents
-- [Need to know](Need-to-know)
-- [Packer](Packer)
-- [Lazy](Lazy)
+- [Need to know](<README#Need to know>)
+- [Packer](README#Packer)
+- [Lazy](README#Lazy)
 
 # Need to know
 
@@ -12,7 +12,7 @@
 | chimera  | lazy    | final      |
 | dolphin  | lazy    | completed  |
 
-Latest version is completed to be an IDE
+Latest version is completed to be IDE
 
 # Packer
 
