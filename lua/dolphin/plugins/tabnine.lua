@@ -1,7 +1,7 @@
 return {
 	"codota/tabnine-nvim",
 	build = (function()
-		if vim.loop.os_uname().sysname == "Windows_NT" then
+		if vim.loop.os_uname().sysname == "windows_nt" then
 			return "pwsh.exe -file .\\dl_binaries.ps1"
 		else
 			return "./dl_binaries.sh"
