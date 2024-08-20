@@ -79,7 +79,7 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "r", "r_language_server", "lintr", nil, "formatR" }, -- R
 	{
 		"node",
-		"markdown_oxide",
+		"marksman",
 		"vale",
 		nil,
 		"remark_cli",
