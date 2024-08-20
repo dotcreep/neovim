@@ -39,25 +39,27 @@ return {
 					function()
 						local mode = vim.fn.mode()
 						if mode == "n" then
-							return "[N]"
+							return "[]"
 						-- return '🅝 NORMAL'
 						elseif mode == "i" then
-							return "[I]"
+							return "[]"
 						-- return '🅘 INSERT'
 						elseif mode == "v" then
-							return "[V]"
+							return "[]"
 						-- return '🅥 VISUAL'
 						elseif mode == "V" then
-							return "[V]"
+							return "[]"
 						-- return '🅥 VISUAL-LINE'
 						elseif mode == "R" then
-							return "[R]"
+							return "[]"
 						-- return '🅡 REPLACE'
 						elseif mode == "c" then
-							return "[C]"
+							return "[]"
 						-- return '🅒 COMMAND'
+						elseif mode == "t" then
+							return "[]"
 						else
-							return "[O]"
+							return "[󰺕]"
 						end
 					end,
 				},
