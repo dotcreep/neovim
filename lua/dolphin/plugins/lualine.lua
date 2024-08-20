@@ -95,6 +95,7 @@ return {
 							hint = " ", -- Ikon untuk petunjuk
 						},
 					},
+					{ "lsp_progress" },
 					{
 						"filename",
 						fmt = function(filename)
@@ -113,7 +114,7 @@ return {
 						path = 1,
 					},
 				},
-				lualine_x = { "filetype" }, -- "encoding", "fileformat",
+				lualine_x = { "filetype", "tabnine" }, -- "encoding", "fileformat",
 				lualine_y = {
 					function()
 						local location = "%l•%v"

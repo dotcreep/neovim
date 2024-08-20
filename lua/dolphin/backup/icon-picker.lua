@@ -5,8 +5,8 @@ return {
 
 		local opts = { noremap = true, silent = true }
 		local keymap = vim.keymap
-		keymap.set("n", "<Leader>ui", "<cmd>IconPickerNormal<cr>", opts)
-		keymap.set("n", "<Leader>uy", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+		keymap.set("n", "<leader>ui", "<cmd>IconPickerNormal<cr>", opts)
+		keymap.set("n", "<leader>uy", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
 		keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 	end,
 }

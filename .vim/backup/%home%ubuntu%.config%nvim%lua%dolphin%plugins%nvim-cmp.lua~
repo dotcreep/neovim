@@ -31,6 +31,7 @@ return {
 			nvim_lsp = "[LSP]",
 			nvim_lua = "[Lua]",
 			cmp_tabnine = "[TN]",
+			tabnine = "[TBN]",
 			path = "[Path]",
 		}
 		local compare = require("cmp.config.compare")
@@ -88,7 +89,8 @@ return {
 				{ name = "nvim_lsp", max_item_count = 10 }, -- Source LSP
 				{ name = "nvim_lua", max_item_count = 5 },
 				{ name = "luasnip", max_item_count = 5 }, -- Source snippet
-				{ name = "cmp_tabnine", max_item_count = 10 }, -- AI Tabnine
+				{ name = "cmp_tabnine", max_item_count = 10 }, -- AI
+				{ name = "tabnine", max_item_count = 10 }, -- AI
 				{ name = "buffer", keyword_length = 5, max_item_count = 5 }, -- Source buffer
 				{ name = "path" }, -- Source path
 				{ name = "treesitter", max_item_count = 10 },
@@ -101,7 +103,7 @@ return {
 					-- in the following line:
 					vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
 					vim_item.menu = source_mapping[entry.source.name]
-					if entry.source.name == "cmp_tabnine" then
+					if entry.source.name == "cmp_tabnine" or entry.source.name == "tabnine" then
 						local detail = (entry.completion_item.labelDetails or {}).detail
 						vim_item.kind = ""
 						if detail and detail:find(".*%%.*") then
