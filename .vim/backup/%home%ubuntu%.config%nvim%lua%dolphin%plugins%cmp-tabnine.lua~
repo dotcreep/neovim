@@ -1,12 +1,3 @@
-local function tabnine_build_path()
-	-- Replace vim.uv with vim.loop if using NVIM 0.9.0 or below
-	if vim.loop.os_uname().sysname == "Windows_NT" then
-		return "pwsh.exe -file .\\install.ps1"
-	else
-		return "./install.sh"
-	end
-end
-
 return {
 	"tzachar/cmp-tabnine",
 	build = function()

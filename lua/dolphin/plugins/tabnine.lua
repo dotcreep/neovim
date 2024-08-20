@@ -1,8 +1,12 @@
 return {
 	"codota/tabnine-nvim",
-	build = function()
-		return vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh"
-	end,
+	build = (function()
+		if vim.loop.os_uname().sysname == "Windows_NT" then
+			return "pwsh.exe -file .\\dl_binaries.ps1"
+		else
+			return "./dl_binaries.sh"
+		end
+	end)(),
 	keys = {
 		{ "n", "<leader>its", "<cmd>TabnineStatus<CR>", desc = "Status AI" },
 		{ "n", "<leader>itd", "<cmd>TabnineDisable<CR>", desc = "Disable AI" },
