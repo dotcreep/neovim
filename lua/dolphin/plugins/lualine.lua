@@ -39,27 +39,27 @@ return {
 					function()
 						local mode = vim.fn.mode()
 						if mode == "n" then
-							return "[]"
+							return ""
 						-- return '🅝 NORMAL'
 						elseif mode == "i" then
-							return "[]"
+							return ""
 						-- return '🅘 INSERT'
 						elseif mode == "v" then
-							return "[]"
+							return ""
 						-- return '🅥 VISUAL'
 						elseif mode == "V" then
-							return "[]"
+							return ""
 						-- return '🅥 VISUAL-LINE'
 						elseif mode == "R" then
-							return "[]"
+							return ""
 						-- return '🅡 REPLACE'
 						elseif mode == "c" then
-							return "[]"
+							return ""
 						-- return '🅒 COMMAND'
 						elseif mode == "t" then
-							return "[]"
+							return ""
 						else
-							return "[󰺕]"
+							return "󰺕"
 						end
 					end,
 				},
@@ -113,10 +113,10 @@ return {
 						path = 1,
 					},
 				},
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = { "filetype" }, -- "encoding", "fileformat",
 				lualine_y = {
 					function()
-						local location = "%l∕%v"
+						local location = "%l•%v"
 						return progress_bar() .. " " .. location
 					end,
 				},
