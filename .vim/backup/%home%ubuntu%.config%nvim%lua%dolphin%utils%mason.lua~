@@ -82,7 +82,7 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 		"marksman",
 		"vale",
 		nil,
-		"remark_cli",
+		"markdownlint",
 	}, -- Markdown
 	{ "bash", "bashls", "shellcheck", "bash-debug-adapter", "shfmt" }, -- Bash
 	{ "arduino-cli", "arduino_language_server", nil, nil, nil }, -- Arduino

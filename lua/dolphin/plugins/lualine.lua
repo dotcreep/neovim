@@ -14,6 +14,22 @@ return {
 			local index = math.ceil(line_ratio * #chars)
 			return chars[index]
 		end
+		local function tabnine_status()
+			local ok, tabnine = pcall(require, "tabnine.status")
+			if not ok then
+				return "󰋙 AI"
+			end
+			local status = tabnine.status()
+			if status:find("starter") then
+				return "󰋘 AI"
+			elseif status:find("pro") then
+				return "󰐭 AI"
+			elseif status:find("loading") then
+				return "󱗿 AI"
+			else
+				return "󰋙 AI"
+			end
+		end
 
 		require("lualine").setup({
 			options = {
@@ -114,7 +130,7 @@ return {
 						path = 1,
 					},
 				},
-				lualine_x = { "filetype", "tabnine" }, -- "encoding", "fileformat",
+				lualine_x = { "filetype" }, -- "encoding", "fileformat",
 				lualine_y = {
 					function()
 						local location = "%l•%v"
@@ -122,11 +138,12 @@ return {
 					end,
 				},
 				lualine_z = {
-					{
-						function()
-							return "" .. " " .. os.date("%H:%M")
-						end,
-					},
+					{ tabnine_status },
+					-- {
+					-- 	function()
+					-- 		return "" .. " " .. os.date("%H:%M")
+					-- 	end,
+					-- },
 				},
 			},
 			inactive_sections = {
