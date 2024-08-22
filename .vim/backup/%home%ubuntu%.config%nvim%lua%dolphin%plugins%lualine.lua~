@@ -19,20 +19,15 @@ return {
 			if not ok then
 				return "󰋙 AI"
 			end
-			local hl = vim.api.nvim_set_hl
-			hl(0, "StatusStarter", { fg = "#FF5733", bg = "NONE" })
-			hl(0, "StatusPro", { fg = "#33FF57", bg = "NONE" })
-			hl(0, "StatusLoading", { fg = "#FFBD33", bg = "NONE" })
-			hl(0, "StatusDefault", { fg = "#FFFFFF", bg = "NONE" })
 			local status = tabnine.status()
 			if status:find("starter") then
-				return "\27[38;5;208m󰋘 AI\27[0m"
+				return "󰋘 AI"
 			elseif status:find("pro") then
-				return "%#StatusPro#󰐭 AI"
-			elseif status:find("loadings") then
-				return "%#StatusLoading#󱗿 AI"
+				return "󰐭 AI"
+			elseif status:find("loading") then
+				return "󱗿 AI"
 			else
-				return "%#StatusDefault#󰋙 AI"
+				return "󰋙 AI"
 			end
 		end
 
@@ -143,7 +138,17 @@ return {
 					end,
 				},
 				lualine_z = {
-					{ tabnine_status },
+					-- { tabnine_status },
+					{
+						function()
+							local status = vim.api.nvim_call_function("codeium#GetStatusString", {})
+							return "🧠" .. status
+						end,
+						cond = function()
+							return vim.fn.exists("*codeium#GetStatusString") == 1
+						end,
+						-- color = { fg = "#ffcc00" }, -- Change color as needed
+					},
 					-- {
 					-- 	function()
 					-- 		return "" .. " " .. os.date("%H:%M")

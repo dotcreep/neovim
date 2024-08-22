@@ -106,6 +106,7 @@ return {
 				{ name = "nvim_lua", max_item_count = 5 },
 				{ name = "luasnip", max_item_count = 5 },
 				{ name = "cmp_tabnine", max_item_count = 10 },
+				{ name = "codeium", max_item_count = 10 },
 				{ name = "buffer", keyword_length = 5, max_item_count = 5 },
 				{ name = "path" },
 				{ name = "treesitter", max_item_count = 10 },

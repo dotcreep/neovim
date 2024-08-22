@@ -138,7 +138,17 @@ return {
 					end,
 				},
 				lualine_z = {
-					{ tabnine_status },
+					-- { tabnine_status },
+					{
+						function()
+							local status = vim.api.nvim_call_function("codeium#GetStatusString", {})
+							return "⚡" .. status
+						end,
+						cond = function()
+							return vim.fn.exists("*codeium#GetStatusString") == 1
+						end,
+						-- color = { fg = "#ffcc00" }, -- Change color as needed
+					},
 					-- {
 					-- 	function()
 					-- 		return "" .. " " .. os.date("%H:%M")
