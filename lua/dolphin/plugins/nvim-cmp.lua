@@ -6,24 +6,21 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
-		"octaltree/cmp-look",
-		"hrsh7th/cmp-calc",
-		"f3fora/cmp-spell",
-		"hrsh7th/cmp-emoji",
+		-- "octaltree/cmp-look",
+		-- "hrsh7th/cmp-calc",
+		--"f3fora/cmp-spell",
+		-- "hrsh7th/cmp-emoji",
 		"ray-x/cmp-treesitter",
-		{
-			"L3MON4D3/LuaSnip",
-			version = "2.*",
-			build = "make install_jsregexp",
-		},
+		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
+		"rafamadriz/friendly-snippets",
 		"onsails/lspkind-nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
+		local lspkind = require("lspkind")
 
 		-- Source mapping configuration
 		local source_mapping = {
@@ -35,33 +32,16 @@ return {
 			treesitter = "[TS]",
 			look = "[Look]",
 			spell = "[Spell]",
-			calc = "[Calc]",
-			emoji = "[Emoji]",
-			neorg = "[Neorg]",
 		}
 
 		-- Configuration for nvim-cmp
 		cmp.setup({
-			sorting = {
-				priority_weight = 2,
-				comparators = {
-					require("cmp_tabnine.compare"),
-					cmp.config.compare.offset,
-					cmp.config.compare.exact,
-					cmp.config.compare.score,
-					cmp.config.compare.recently_used,
-					cmp.config.compare.kind,
-					cmp.config.compare.sort_text,
-					cmp.config.compare.length,
-					cmp.config.compare.order,
-				},
-			},
 			window = {
 				completion = cmp.config.window.bordered(),
 			},
 			completion = {
-				completeopt = "menu,menuone,noinsert",
-				keyword_length = 1,
+				completeopt = "menu,menuone,preview,noselect",
+				-- keyword_length = 1,
 			},
 			snippet = {
 				expand = function(args)
@@ -84,14 +64,16 @@ return {
 				}),
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", max_item_count = 10 },
-				{ name = "nvim_lua", max_item_count = 5 },
-				{ name = "luasnip", max_item_count = 5 },
-				{ name = "cmp_tabnine", max_item_count = 10 },
-				-- { name = "codeium", max_item_count = 10 },
-				{ name = "buffer", keyword_length = 5, max_item_count = 5 },
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "nvim_lua" },
+				{ name = "treesitter" },
 				{ name = "path" },
-				{ name = "treesitter", max_item_count = 10 },
+				-- { name = "codeium", max_item_count = 10 },
+				{ name = "cmp_tabnine" },
+			}, {
+				{ name = "buffer" },
 			}),
 			formatting = {
 				fields = { "abbr", "kind", "menu" },
