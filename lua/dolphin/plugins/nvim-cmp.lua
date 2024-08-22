@@ -78,24 +78,6 @@ return {
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
 				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true,
@@ -106,7 +88,7 @@ return {
 				{ name = "nvim_lua", max_item_count = 5 },
 				{ name = "luasnip", max_item_count = 5 },
 				{ name = "cmp_tabnine", max_item_count = 10 },
-				{ name = "codeium", max_item_count = 10 },
+				-- { name = "codeium", max_item_count = 10 },
 				{ name = "buffer", keyword_length = 5, max_item_count = 5 },
 				{ name = "path" },
 				{ name = "treesitter", max_item_count = 10 },
