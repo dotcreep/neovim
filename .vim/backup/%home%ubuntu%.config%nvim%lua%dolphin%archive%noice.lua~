@@ -237,7 +237,7 @@ return {
 			fpd = 30,
 			level = 2,
 			minimum_width = 50,
-			render = "mini",
+			render = "minimal",
 			stages = "fade_in_slide_out",
 			timeout = 3000,
 		})

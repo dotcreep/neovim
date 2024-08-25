@@ -92,7 +92,7 @@ return {
         vim.cmd('BufferLineCyclePrev')
         vim.cmd('bd ' .. current_buf)
       else
-        vim.cmd('tabclose')
+        vim.cmd('bd ' .. current_buf)
       end
     end
   end,
