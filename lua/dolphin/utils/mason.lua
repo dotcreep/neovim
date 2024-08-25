@@ -90,7 +90,7 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "cmake", "cmake", nil, nil, nil }, -- CMake
 	{ "flutter", "dcm", "dcm", "dart-debug-adapter", "dcm" }, -- Dart
 	{ "docker", "dockerls", "hadolint", nil, nil }, -- Docker
-	{ "python3", "jinja_lsp", "flake8", "debugpy", "black" }, -- Django
+	{ "python3", "pyright", "flake8", "debugpy", "black" }, -- Django
 	{ "gradle", "gradle_ls", nil, nil, nil }, -- Gradle
 	{ "helm", "helm_ls", nil, nil, nil }, -- Helm
 	{
