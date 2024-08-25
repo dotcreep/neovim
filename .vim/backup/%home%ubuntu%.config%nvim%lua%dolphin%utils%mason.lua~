@@ -67,7 +67,7 @@ local tools = {
 local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "python3", "pylsp", "flake8", "debugpy", "black" }, -- Python
 	{ "node", "tsserver", "eslint", "node-debug2-adapter", "prettier" }, -- Node.js / Javascript
-	{ "go", "gopls", "revive", "delve", "gofumpt" }, -- Golang
+	{ "go", "gopls", "golangci-lint", "delve", "gofumpt" }, -- Golang
 	{ "luac", "lua_ls", "luacheck", nil, "stylua" }, -- Lua
 	{ "gcc", "clangd", "cpplint", "cpptools", "clang-format" }, -- C
 	{ "g++", "clangd", "cpplint", "cpptools", "clang-format" }, -- C++
@@ -113,7 +113,7 @@ local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
 	{ "node", "volar", "eslint", "node-debug2-adapter", "prettier" }, -- Vue.js
 	{ "node", "angularls", "eslint", "node-debug2-adapter", "prettier" }, -- AngularJS
 	{ "vim", "vimls", nil, nil, nil }, -- Vimscript
-	{ "node", "yamlls", "sonarlint-language-server", nil, "prettier" }, -- YAML
+	{ "node", "yamlls", "yamllint", nil, "prettier" }, -- YAML
 }
 
 local function configure_tools()

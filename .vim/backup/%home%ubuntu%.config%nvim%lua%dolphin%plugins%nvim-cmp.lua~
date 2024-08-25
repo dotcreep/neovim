@@ -6,6 +6,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
+		"vappolinario/cmp-clippy",
 		-- "octaltree/cmp-look",
 		-- "hrsh7th/cmp-calc",
 		--"f3fora/cmp-spell",
@@ -20,7 +21,7 @@ return {
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_vscode").lazy_load()
-		-- local lspkind = require("lspkind")
+		local lspkind = require("lspkind")
 
 		-- Source mapping configuration
 		local source_mapping = {
@@ -71,6 +72,13 @@ return {
 				{ name = "treesitter" },
 				{ name = "path" },
 				-- { name = "codeium", max_item_count = 10 },
+				{
+					name = "cmp-clippy",
+					options = {
+						model = "EleutherAI/gpt-neo-2.7B", -- check code clippy vscode repo for options
+						key = "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", -- huggingface.co api key
+					},
+				},
 				{ name = "cmp_tabnine" },
 			}, {
 				{ name = "buffer" },

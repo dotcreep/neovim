@@ -130,7 +130,7 @@ return {
 						path = 1,
 					},
 				},
-				lualine_x = { "filetype" }, -- "encoding", "fileformat",
+				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = {
 					function()
 						local location = "%l•%v"
@@ -142,7 +142,7 @@ return {
 					{
 						function()
 							local status = vim.api.nvim_call_function("codeium#GetStatusString", {})
-							return "⚡" .. status
+							return "󰚩" .. status
 						end,
 						cond = function()
 							return vim.fn.exists("*codeium#GetStatusString") == 1
