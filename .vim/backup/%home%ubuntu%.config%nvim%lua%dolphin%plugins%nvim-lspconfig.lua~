@@ -31,40 +31,24 @@ return {
 						},
 					},
 				})
+			elseif lsp == "tsserver" then
+				lspconfig.tsserver.setup({
+					capabilities = capabilities,
+					on_attach = function(client)
+						client.server_capabilities.documentHighlightProvider = true
+					end,
+				})
 			else
 				lspconfig[lsp].setup({
 					capabilities = capabilities,
-					settings = {
-						Lua = {
-							runtime = {
-								-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-								version = "LuaJIT",
-							},
-							diagnostics = {
-								-- Get the language server to recognize the `vim` global
-								globals = { "vim" },
-							},
-							workspace = {
-								-- Make the server aware of Neovim runtime files
-								library = vim.api.nvim_get_runtime_file("", true),
-							},
-							-- Do not send telemetry data containing a randomized but unique identifier
-							telemetry = {
-								enable = false,
-							},
-						},
-					},
+					on_attach = function(client)
+						client.server_capabilities.documentHighlightProvider = true
+					end,
 				})
 			end
 		end
 		for _, lsp in ipairs(lsp_servers) do
 			setup(lsp)
 		end
-		lspconfig.tsserver.setup({
-			capabilities = cmp_nvim_lsp.default_capabilities(),
-			on_attach = function(client)
-				client.server_capabilities.documentHighlightProvider = true
-			end,
-		})
 	end),
 }

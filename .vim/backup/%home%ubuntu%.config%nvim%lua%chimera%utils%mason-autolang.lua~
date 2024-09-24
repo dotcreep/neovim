@@ -57,63 +57,46 @@ local function add(t, package_name, lsp, linter, dap, formatter)
 	end
 end
 
-local tools = {
-	lsp = {},
-	linter = { "snyk" },
-	dap = {},
-	formatter = {},
-}
+local tools = { lsp = {}, linter = {}, dap = {}, formatter = {} }
 
 local configurations = { -- Konfigurasi untuk berbagai bahasa dan tools
-	{ "python3", "pylsp", "flake8", "debugpy", "black" }, -- Python
-	{ "node", "ts_ls", "eslint", "node-debug2-adapter", "prettier" }, -- Node.js / Javascript
-	{ "go", "gopls", "golangci-lint", "delve", "gofumpt" }, -- Golang
-	{ "luac", "lua_ls", "luacheck", nil, "stylua" }, -- Lua
+	{ "python3", "pyright", "flake8", "debugpy", "black" }, -- Python
+	{ "node", "tsserver", "eslint", "node-debug2-adapter", "prettier" }, -- Node.js / Javascript
+	{ "go", "gopls", "golangci_lint_ls", "delve", "gofmt" }, -- Golang
+	{ "luac", "lua_ls", "luacheck", "nlua", "stylua" }, -- Lua
 	{ "gcc", "clangd", "cpplint", "cpptools", "clang-format" }, -- C
 	{ "g++", "clangd", "cpplint", "cpptools", "clang-format" }, -- C++
 	{ "dotnet", "omnisharp", nil, nil, nil }, -- C#
-	{ "node", "cssls", "stylelint", nil, "prettier" }, -- CSS
-	{ "node", "html", "htmlhint", nil, "prettier" }, -- HTML
+	{ "node", nil, "stylelint", nil, "prettier" }, -- CSS
+	{ "node", nil, "htmlhint", nil, "prettier" }, -- HTML
 	{ "ruby", "solargraph", "rubocop", nil, "rufo" }, -- Ruby
-	{ "rustc", "rust_analyzer", "trivy", nil, "rustywind" }, -- Rust
+	{ "rustc", "rust_analyzer", "trivy", nil, "rusttywind" }, -- Rust
 	{ "r", "r_language_server", "lintr", nil, "formatR" }, -- R
-	{
-		"node",
-		"marksman",
-		"vale",
-		nil,
-		"markdownlint",
-	}, -- Markdown
-	{ "bash", "bashls", "shellcheck", "bash-debug-adapter", "shfmt" }, -- Bash
+	{ "node", "remark_ls", "vale", nil, "remark_cli" }, -- Markdown
+	{ "bash", "bashls", "shellcheck", nil, "shfmt" }, -- Bash
 	{ "arduino-cli", "arduino_language_server", nil, nil, nil }, -- Arduino
 	{ "az", "azure_pipelines_ls", nil, nil, nil }, -- Azure Pipeline
 	{ "cmake", "cmake", nil, nil, nil }, -- CMake
-	{ "flutter", "dcm", "dcm", "dart-debug-adapter", "dcm" }, -- Dart
+	{ "dart", "dcm", "dcm", "dart-debug-adapter", "dcm" }, -- Dart
 	{ "docker", "dockerls", "hadolint", nil, nil }, -- Docker
-	{ "python3", "pyright", "flake8", "debugpy", "black" }, -- Django
+	{ "python3", "jinja_lsp", "flake8", nil, "black" }, -- Django
 	{ "gradle", "gradle_ls", nil, nil, nil }, -- Gradle
 	{ "helm", "helm_ls", nil, nil, nil }, -- Helm
-	{
-		"java",
-		"jdtls",
-		"checkstyle",
-		"jdtls",
-		"google-java-format",
-	}, -- Java
+	{ "java", "jdtls", "checkstyle", "jdtls", "google-java-format" }, -- Java
 	{ "node", nil, "jsonlint", nil, "prettier" }, -- JSON
-	{ "java", "kotlin-language-server", "ktlint", "kotlin-debug-adapter", "ktfmt" }, -- Kotlin
+	{ "java", "kotlin-language-server", "ktlint", nil, "ktfmt" }, -- Kotlin
 	{ "perl", "perlnavigator", nil, "perl-debug-adapter", nil }, -- Perl
 	{ "php", "intelephense", "phpcs", nil, "phpcs" }, -- PHP
 	{ "pwsh", "powershelle", "pylint", nil, nil }, -- PowerShell
 	{ "puppet", "puppet", "puppet-lint", nil, nil }, -- Puppet
 	{ "sqlcmd", "sqlls", "sqlfluff", nil, nil }, -- SQL
 	{ "terraform", "terraformls", "tflint", nil, nil }, -- Terraform
-	{ "node", "ts_ls", "eslint", "node-debug2-adapter", "prettier" }, -- TypeScript
-	{ "node", "ts_ls", "eslint", "node-debug2-adapter", "prettier" }, -- React
-	{ "node", "volar", "eslint", "node-debug2-adapter", "prettier" }, -- Vue.js
-	{ "node", "angularls", "eslint", "node-debug2-adapter", "prettier" }, -- AngularJS
+	{ "node", "tsserver", "eslint", nil, "prettier" }, -- TypeScript
+	{ "node", "tsserver", "eslint", nil, "prettier" }, -- React
+	{ "node", "volar", "eslint", nil, "prettier" }, -- Vue.js
+	{ "node", "angularls", "eslint", nil, "prettier" }, -- AngularJS
 	{ "vim", "vimls", nil, nil, nil }, -- Vimscript
-	{ "node", "yamlls", "yamllint", nil, "prettier" }, -- YAML
+	{ "node", nil, "yamlls", nil, "prettier" }, -- YAML
 }
 
 local function configure_tools()
